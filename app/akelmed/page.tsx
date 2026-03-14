@@ -528,7 +528,7 @@ export default function AkelMedPage() {
             <div className="flex flex-col sm:flex-row justify-center gap-6">
 
               <a
-                href="https://wa.me/5555991942215"
+                href="https://wa.me/5555999171727"
                 className="bg-[#EF4444] hover:bg-[#dc2626] text-white px-8 py-4 rounded-lg text-lg font-semibold transition"
               >
                 Falar no WhatsApp

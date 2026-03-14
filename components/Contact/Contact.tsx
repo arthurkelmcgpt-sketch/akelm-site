@@ -24,7 +24,7 @@ export default function Contact() {
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-6">
 
             <a
-              href="https://wa.me/5555991942215"
+              href="https://wa.me/5555999171727"
               className="px-8 py-4 bg-[#EF4444] text-white rounded-lg font-medium transition hover:bg-red-600"
             >
               Falar no WhatsApp
