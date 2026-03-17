@@ -1,14 +1,30 @@
-import Navbar from "@/components/Navbar/Navbar";
+import type { Metadata } from "next";
+
+import AkelMedPublicPage from "./AkelMedPublicPage";
 import Footer from "@/components/Footer/Footer";
+import Navbar from "@/components/Navbar/Navbar";
 import Image from "next/image";
 
-export const metadata = {
+const legacyMetadata: Metadata = {
   title: "AkelMed — Sistema de gestão clínica e prontuário eletrônico",
   description:
     "Plataforma SaaS para clínicas e consultórios médicos com agenda médica, prontuário eletrônico, gestão de pacientes e controle de acessos.",
 };
 
+export const metadata: Metadata =
+  process.env.NEXT_PUBLIC_USE_LEGACY_AKELMED_PAGE === "true"
+    ? legacyMetadata
+    : {
+        title: "AkelMed - sistema de gestao clinica e prontuario eletronico",
+        description:
+          "Plataforma SaaS para clinicas e consultorios com agenda medica, prontuario eletronico, gestao de pacientes e controle de acessos.",
+      };
+
 export default function AkelMedPage() {
+  if (process.env.NEXT_PUBLIC_USE_LEGACY_AKELMED_PAGE !== "true") {
+    return <AkelMedPublicPage />;
+  }
+
   return (
     <>
       <Navbar />

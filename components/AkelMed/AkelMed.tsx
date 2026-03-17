@@ -7,7 +7,7 @@ export default function AkelMed() {
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
         {/* Texto */}
-        <div>
+        <div data-reveal data-reveal-delay={50} data-reveal-origin="left">
 
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#111827]">
             AkelMed
@@ -30,17 +30,32 @@ export default function AkelMed() {
           {/* Funcionalidades */}
           <div className="mt-8 space-y-4">
 
-            <div className="flex items-center gap-3 text-gray-700">
+            <div
+              className="flex items-center gap-3 text-gray-700"
+              data-reveal
+              data-reveal-delay={150}
+              data-reveal-origin="left"
+            >
               <CalendarDays className="text-[#EF4444]" size={22} />
               Agenda médica e gestão de consultas
             </div>
 
-            <div className="flex items-center gap-3 text-gray-700">
+            <div
+              className="flex items-center gap-3 text-gray-700"
+              data-reveal
+              data-reveal-delay={210}
+              data-reveal-origin="left"
+            >
               <FileText className="text-[#EF4444]" size={22} />
               Prontuário eletrônico completo
             </div>
 
-            <div className="flex items-center gap-3 text-gray-700">
+            <div
+              className="flex items-center gap-3 text-gray-700"
+              data-reveal
+              data-reveal-delay={270}
+              data-reveal-origin="left"
+            >
               <ShieldCheck className="text-[#EF4444]" size={22} />
               Segurança e controle de acesso
             </div>
@@ -57,7 +72,12 @@ export default function AkelMed() {
         </div>
 
         {/* Preview do sistema */}
-        <div className="relative">
+        <div
+          className="relative"
+          data-reveal
+          data-reveal-delay={110}
+          data-reveal-origin="right"
+        >
 
           <div className="absolute inset-0 bg-red-100 blur-3xl opacity-40 rounded-2xl"></div>
 
@@ -70,13 +90,14 @@ export default function AkelMed() {
             </div>
 
             <div className="relative h-[380px]">
-
-              <Image
-                src="/images/akelmed/akelmed-exemple.png"
-                alt="Interface do sistema AkelMed"
-                fill
-                className="object-cover"
-              />
+              <div className="scroll-parallax-media h-full" data-parallax="12">
+                <Image
+                  src="/images/akelmed/akelmmedbkg.png"
+                  alt="Interface do sistema AkelMed"
+                  fill
+                  className="object-cover"
+                />
+              </div>
 
             </div>
 

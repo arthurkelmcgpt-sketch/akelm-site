@@ -11,11 +11,13 @@ import Dedicated from "@/components/Dedicated/Dedicated";
 import Contact from "@/components/Contact/Contact";
 import About from "@/components/About/About";
 import Footer from "@/components/Footer/Footer";
+import ScrollMotion from "@/components/ScrollMotion/ScrollMotion";
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      <ScrollMotion />
 
       <main>
 

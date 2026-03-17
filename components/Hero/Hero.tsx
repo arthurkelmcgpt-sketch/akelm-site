@@ -23,22 +23,42 @@ export default function Hero() {
       <div className="absolute w-[700px] h-[700px] bg-[#EF4444] opacity-20 blur-3xl rounded-full bottom-[-250px] right-[-250px]" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div
+        className="relative z-10 max-w-5xl mx-auto px-6 text-center"
+        data-reveal
+        data-reveal-delay={40}
+        data-reveal-origin="up"
+      >
 
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+        <h1
+          className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]"
+          data-reveal
+          data-reveal-delay={80}
+          data-reveal-origin="up"
+        >
           Soluções em T.I completas
           <span className="block text-[#EF4444]">
             Para tua empresa
           </span>
         </h1>
 
-        <p className="mt-8 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+        <p
+          className="mt-8 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto"
+          data-reveal
+          data-reveal-delay={140}
+          data-reveal-origin="up"
+        >
           Da gestão de redes ao desenvolvimento de plataformas SaaS e sistemas
           dedicados, a Akelm Tecnologia entrega soluções inteligentes e
           escaláveis para empresas que precisam evoluir tecnologicamente.
         </p>
 
-        <div className="mt-12 flex flex-col sm:flex-row justify-center gap-5">
+        <div
+          className="mt-12 flex flex-col sm:flex-row justify-center gap-5"
+          data-reveal
+          data-reveal-delay={200}
+          data-reveal-origin="up"
+        >
 
           <a
             href="#solucoes"

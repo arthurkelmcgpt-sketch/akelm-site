@@ -31,17 +31,32 @@ export default function About() {
       <div className="relative max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center text-white">
 
         {/* TEXTO */}
-        <div>
+        <div data-reveal data-reveal-delay={50} data-reveal-origin="left">
 
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+          <h2
+            className="text-4xl md:text-5xl font-bold tracking-tight"
+            data-reveal
+            data-reveal-delay={90}
+            data-reveal-origin="left"
+          >
             Sobre a Akelm Tecnologia
           </h2>
 
-          <p className="mt-8 text-lg text-gray-300">
+          <p
+            className="mt-8 text-lg text-gray-300"
+            data-reveal
+            data-reveal-delay={150}
+            data-reveal-origin="left"
+          >
             A Akelm Tecnologia atua na gestão da infraestrutura de redes e desenvolvimento de soluções técnologicas voltadas para empresas de pequeno, médio e grande porte.
           </p>
 
-          <p className="mt-6 text-gray-400">
+          <p
+            className="mt-6 text-gray-400"
+            data-reveal
+            data-reveal-delay={210}
+            data-reveal-origin="left"
+          >
             Com experiência em gestão de redes, desenvolvimento de
             sistemas e criação de plataformas SaaS, a empresa busca
             entregar soluções que combinam estabilidade, segurança
@@ -51,21 +66,28 @@ export default function About() {
         </div>
 
         {/* FOTO */}
-        <div className="flex justify-center lg:justify-end">
+        <div
+          className="flex justify-center lg:justify-end"
+          data-reveal
+          data-reveal-delay={110}
+          data-reveal-origin="right"
+        >
 
           <div className="relative">
 
             {/* glow atrás da foto */}
             <div className="absolute w-[260px] h-[260px] bg-[#EF4444] blur-[120px] opacity-30 rounded-full"></div>
 
-            <Image
-              src="/images/Foto-institucional.png"
-              alt="Arthur - Akelm Tecnologia"
-              width={260}
-              height={260}
-              className="relative rounded-full object-cover border border-white/10 shadow-xl"
-              priority
-            />
+            <div className="scroll-parallax-media" data-parallax="10">
+              <Image
+                src="/images/Foto-institucional.png"
+                alt="Arthur - Akelm Tecnologia"
+                width={260}
+                height={260}
+                className="relative rounded-full object-cover border border-white/10 shadow-xl"
+                priority
+              />
+            </div>
 
           </div>
 

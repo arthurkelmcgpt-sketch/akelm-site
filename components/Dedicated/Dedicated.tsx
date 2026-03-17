@@ -7,23 +7,30 @@ export default function Dedicated() {
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
         {/* Imagem */}
-        <div className="relative">
+        <div
+          className="relative"
+          data-reveal
+          data-reveal-delay={60}
+          data-reveal-origin="left"
+        >
 
           <div className="absolute inset-0 bg-red-100 blur-3xl opacity-40 rounded-2xl"></div>
 
           <div className="relative h-[380px] rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
-            <Image
-              src="/images/dedicated.jpg"
-              alt="Sistema corporativo dedicado"
-              fill
-              className="object-cover"
-            />
+            <div className="scroll-parallax-media h-full" data-parallax="12">
+              <Image
+                src="/images/dedicated.jpg"
+                alt="Sistema corporativo dedicado"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
 
         </div>
 
         {/* Texto */}
-        <div>
+        <div data-reveal data-reveal-delay={120} data-reveal-origin="right">
 
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#111827]">
             Sistemas Dedicados
@@ -43,17 +50,32 @@ export default function Dedicated() {
           {/* Benefícios */}
           <div className="mt-8 space-y-4">
 
-            <div className="flex items-center gap-3 text-gray-700">
+            <div
+              className="flex items-center gap-3 text-gray-700"
+              data-reveal
+              data-reveal-delay={180}
+              data-reveal-origin="right"
+            >
               <Settings className="text-[#EF4444]" size={22} />
               Software desenvolvido sob medida
             </div>
 
-            <div className="flex items-center gap-3 text-gray-700">
+            <div
+              className="flex items-center gap-3 text-gray-700"
+              data-reveal
+              data-reveal-delay={240}
+              data-reveal-origin="right"
+            >
               <Database className="text-[#EF4444]" size={22} />
               Integração com sistemas existentes
             </div>
 
-            <div className="flex items-center gap-3 text-gray-700">
+            <div
+              className="flex items-center gap-3 text-gray-700"
+              data-reveal
+              data-reveal-delay={300}
+              data-reveal-origin="right"
+            >
               <Link className="text-[#EF4444]" size={22} />
               Automação de processos internos
             </div>

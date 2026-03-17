@@ -6,22 +6,47 @@ export default function Contact() {
         {/* Glow */}
         <div className="absolute inset-0 bg-red-100 blur-3xl opacity-30 rounded-2xl"></div>
 
-        <div className="relative">
+        <div
+          className="relative"
+          data-reveal
+          data-reveal-delay={50}
+          data-reveal-origin="up"
+        >
 
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#111827]">
+          <h2
+            className="text-4xl md:text-5xl font-bold tracking-tight text-[#111827]"
+            data-reveal
+            data-reveal-delay={90}
+            data-reveal-origin="up"
+          >
             Entre em contato
           </h2>
 
-          <p className="mt-6 text-lg text-gray-600">
+          <p
+            className="mt-6 text-lg text-gray-600"
+            data-reveal
+            data-reveal-delay={150}
+            data-reveal-origin="up"
+          >
             Precisa desenvolver um sistema, plataforma SaaS
             ou melhorar a infraestrutura tecnológica da sua empresa?
           </p>
 
-          <p className="mt-2 text-gray-600">
+          <p
+            className="mt-2 text-gray-600"
+            data-reveal
+            data-reveal-delay={190}
+            data-reveal-origin="up"
+          >
             Fale diretamente conosco.
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-6">
+          <div
+            className="mt-10 flex flex-col sm:flex-row justify-center gap-6"
+            data-reveal
+            data-reveal-delay={240}
+            data-reveal-origin="up"
+          >
 
             <a
               href="https://wa.me/5555999171727"

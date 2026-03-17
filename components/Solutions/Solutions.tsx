@@ -36,11 +36,21 @@ export default function Solutions() {
     <section id="solucoes" className="w-full py-28 bg-[#F3F4F6]">
       <div className="max-w-7xl mx-auto px-6 text-center">
 
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#111827]">
+        <h2
+          className="text-4xl md:text-5xl font-bold tracking-tight text-[#111827]"
+          data-reveal
+          data-reveal-delay={40}
+          data-reveal-origin="up"
+        >
           Soluções tecnológicas para empresas
         </h2>
 
-        <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+        <p
+          className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto"
+          data-reveal
+          data-reveal-delay={100}
+          data-reveal-origin="up"
+        >
           A Akelm Tecnologia atua no desenvolvimento de sistemas,
           plataformas SaaS e gestão de infraestrutura de redes,
           oferecendo soluções completas para empresas.
@@ -56,6 +66,9 @@ export default function Solutions() {
                 key={index}
                 href={item.link}
                 className="group block bg-white p-8 rounded-2xl border border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                data-reveal
+                data-reveal-delay={140 + index * 70}
+                data-reveal-origin={index % 2 === 0 ? "left" : "right"}
               >
 
                 <div className="flex items-center gap-4">
