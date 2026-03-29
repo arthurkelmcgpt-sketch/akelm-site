@@ -11,7 +11,7 @@ export type AkelMedFaq = {
 export default function AkelMedFaqDrawer({
   faqs,
 }: {
-  faqs: AkelMedFaq[];
+  faqs: ReadonlyArray<AkelMedFaq>;
 }) {
   const [open, setOpen] = useState(false);
 
