@@ -467,10 +467,10 @@ export default function AkelMedPublicPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(akelmedStructuredData) }} />
 
       <main className="min-h-screen bg-[linear-gradient(180deg,#f7f5f1_0%,#f1ece4_100%)] text-slate-900">
-        <section className="mx-auto w-full max-w-7xl px-6 py-8 sm:py-10 lg:py-12">
+        <section className="mx-auto w-full max-w-7xl px-3 py-4 sm:px-6 sm:py-10 lg:py-12">
           <div className="rounded-[2.25rem] border border-slate-200 bg-white/75 p-4 shadow-[0_30px_90px_rgba(15,23,42,0.08)] backdrop-blur" data-reveal>
             <div className="relative overflow-hidden rounded-[1.9rem] border border-slate-200 bg-slate-950 shadow-[0_28px_80px_rgba(15,23,42,0.18)]">
-              <div className="scroll-parallax-media relative aspect-[16/9] min-h-[540px]" data-parallax="10">
+              <div className="scroll-parallax-media relative min-h-[340px] sm:aspect-[16/9] sm:min-h-[540px]" data-parallax="10">
                 <Image
                   src="/images/akelmed/gemini-header-akelmed-3.png"
                   alt="Header do AkelMed com a interface do sistema em destaque"
@@ -487,14 +487,14 @@ export default function AkelMedPublicPage() {
                   AkelMed
                 </div>
 
-                <div className="absolute left-6 top-24 max-w-xl rounded-[1.75rem] border border-white/12 bg-white/10 p-6 text-white shadow-[0_24px_80px_rgba(15,23,42,0.25)] backdrop-blur-xl sm:left-8 sm:top-28 sm:p-7">
+                <div className="absolute left-3 right-3 top-3 max-w-none rounded-[1.4rem] border border-white/12 bg-white/10 p-3 text-white shadow-[0_24px_80px_rgba(15,23,42,0.25)] backdrop-blur-xl sm:left-8 sm:top-28 sm:max-w-xl sm:p-7">
                   <p className="text-[0.68rem] font-semibold uppercase tracking-[0.34em] text-white/70">
                     Conheça nosso sistema:
                   </p>
-                  <h1 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-[3.1rem] lg:leading-[1.04]">
+                  <h1 className="mt-2 text-xl font-semibold tracking-tight text-white sm:mt-4 sm:text-4xl lg:text-[3.1rem] lg:leading-[1.04]">
                     A AkelMed é uma plataforma completa para gestão de consultórios e clínicas médicas.
                   </h1>
-                  <p className="mt-4 max-w-lg text-sm leading-7 text-white/82 sm:text-base">
+                  <p className="mt-2 max-w-lg text-[0.85rem] leading-5 text-white/82 sm:mt-4 sm:leading-7 sm:text-base">
                     Projetada com total isolamento de dados, o sistema organiza
                     as operações em módulos que atendem desde a recepção e o
                     financeiro até o atendimento clínico detalhado, com um
@@ -502,14 +502,14 @@ export default function AkelMedPublicPage() {
                     premium.
                   </p>
 
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    <span className="rounded-full border border-white/12 bg-white/10 px-4 py-2 text-sm font-medium text-white/92">
+                  <div className="mt-4 flex flex-wrap gap-2 sm:mt-6 sm:gap-3">
+                    <span className="rounded-full border border-white/12 bg-white/10 px-3 py-1.5 text-[0.75rem] font-medium text-white/92 sm:px-4 sm:py-2 sm:text-sm">
                       Isolamento de dados
                     </span>
-                    <span className="rounded-full border border-white/12 bg-white/10 px-4 py-2 text-sm font-medium text-white/92">
+                    <span className="rounded-full border border-white/12 bg-white/10 px-3 py-1.5 text-[0.75rem] font-medium text-white/92 sm:px-4 sm:py-2 sm:text-sm">
                       LGPD
                     </span>
-                    <span className="rounded-full border border-white/12 bg-white/10 px-4 py-2 text-sm font-medium text-white/92">
+                    <span className="rounded-full border border-white/12 bg-white/10 px-3 py-1.5 text-[0.75rem] font-medium text-white/92 sm:px-4 sm:py-2 sm:text-sm">
                       Gestão clínica completa!
                     </span>
                   </div>
@@ -518,7 +518,7 @@ export default function AkelMedPublicPage() {
             </div>
           </div>
 
-          <div className="mt-12">
+          <div className="mt-6 sm:mt-12">
             <div className="max-w-3xl" data-reveal data-reveal-delay={60}>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-red-900/70">
                 Módulos da plataforma
@@ -531,10 +531,10 @@ export default function AkelMedPublicPage() {
               </p>
             </div>
 
-            <div className="mt-8 grid gap-6">
+            <div className="mt-6 grid gap-4 sm:mt-8 sm:gap-6">
               {modules.map((module, index) => (
                 <article
-                  className="overflow-hidden rounded-[2rem] border border-red-500/15 bg-red-950/5 shadow-[0_18px_50px_rgba(15,23,42,0.05)]"
+                  className="overflow-hidden rounded-[1.6rem] border border-red-500/15 bg-red-950/5 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:rounded-[2rem]"
                   key={module.title}
                   data-reveal
                   data-reveal-delay={index * 80 + 80}
@@ -542,21 +542,21 @@ export default function AkelMedPublicPage() {
                   <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
                     <div
                       className={[
-                        "p-6 sm:p-8",
+                        "p-4 sm:p-8",
                         index % 2 === 1 ? "lg:order-2" : "",
                       ].join(" ")}
                     >
                       <p className="text-xs font-semibold uppercase tracking-[0.26em] text-red-900/60">
                         {module.title}
                       </p>
-                      <p className="mt-4 max-w-xl text-sm leading-7 text-slate-700 sm:text-base">
+                      <p className="mt-3 max-w-xl text-sm leading-6 text-slate-700 sm:mt-4 sm:leading-7 sm:text-base">
                         {module.summary}
                       </p>
                     </div>
 
                     <div
                       className={[
-                        "scroll-parallax-media relative aspect-[4/3] lg:aspect-auto lg:min-h-[360px]",
+                        "scroll-parallax-media relative h-44 sm:h-60 lg:aspect-auto lg:min-h-[360px]",
                         index % 2 === 1 ? "lg:order-1" : "",
                       ].join(" ")}
                       data-parallax={index % 2 === 0 ? "12" : "8"}
@@ -571,38 +571,38 @@ export default function AkelMedPublicPage() {
                     </div>
                   </div>
 
-                  <details className="group border-t border-red-500/10 bg-red-950/5 px-6 py-5 sm:px-8">
-                    <summary className="flex cursor-pointer list-none items-center justify-between rounded-2xl border border-red-500/15 bg-white/90 px-4 py-3 text-sm font-medium text-slate-700 transition hover:border-red-200 hover:bg-red-50/60">
+                  <details className="group border-t border-red-500/10 bg-red-950/5 px-4 py-4 sm:px-6 sm:py-5 sm:px-8">
+                    <summary className="flex cursor-pointer list-none items-center justify-between rounded-2xl border border-red-500/15 bg-white/90 px-3 py-2 text-xs font-medium text-slate-700 transition hover:border-red-200 hover:bg-red-50/60 sm:px-4 sm:py-3 sm:text-sm">
                       <span>Veja todas as funcionalidades deste módulo</span>
                       <span className="text-red-900 transition group-open:rotate-45">
                         +
                       </span>
                     </summary>
 
-                    <div className="mt-5 columns-1 md:columns-2 md:gap-4">
+                    <div className="mt-4 columns-1 md:columns-2 md:gap-4">
                       {module.drawerItems.map((item) => (
                         <div
-                          className="mb-4 inline-block w-full break-inside-avoid rounded-2xl border border-red-500/10 bg-white/95 px-5 py-4 shadow-[0_12px_30px_rgba(15,23,42,0.04)]"
+                          className="mb-3 inline-block w-full break-inside-avoid rounded-2xl border border-red-500/10 bg-white/95 px-4 py-3 shadow-[0_12px_30px_rgba(15,23,42,0.04)] sm:mb-4 sm:px-5 sm:py-4"
                           key={item.title}
                         >
-                          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-red-900/75">
+                          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-red-900/75 sm:text-sm sm:tracking-[0.24em]">
                             {item.title}
                           </p>
-                          <p className="mt-3 text-sm leading-7 text-slate-700">
+                          <p className="mt-2 text-sm leading-6 text-slate-700 sm:mt-3 sm:leading-7">
                             {item.description}
                           </p>
 
                           {item.subItems?.length ? (
-                            <div className="mt-4 grid gap-3">
+                            <div className="mt-3 grid gap-2 sm:mt-4 sm:gap-3">
                               {item.subItems.map((subItem) => (
                                 <div
-                                  className="break-inside-avoid rounded-xl border border-red-500/10 bg-red-950/5 px-4 py-3"
+                                  className="break-inside-avoid rounded-xl border border-red-500/10 bg-red-950/5 px-3 py-2 sm:px-4 sm:py-3"
                                   key={subItem.title}
                                 >
-                                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-900/70">
+                                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-red-900/70 sm:text-xs sm:tracking-[0.22em]">
                                     {subItem.title}
                                   </p>
-                                  <p className="mt-2 text-sm leading-7 text-slate-700">
+                                  <p className="mt-2 text-sm leading-6 text-slate-700 sm:leading-7">
                                     {subItem.description}
                                   </p>
                                 </div>
@@ -619,7 +619,7 @@ export default function AkelMedPublicPage() {
           </div>
 
 
-          <section className="mt-12" data-reveal data-reveal-delay={120}>
+          <section className="mt-8 sm:mt-12" data-reveal data-reveal-delay={120}>
             <div className="max-w-3xl" data-reveal data-reveal-delay={60}>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-red-900/70">
                 Planos
@@ -632,10 +632,10 @@ export default function AkelMedPublicPage() {
               </p>
             </div>
 
-            <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            <div className="mt-6 grid gap-4 lg:grid-cols-3 sm:mt-8 sm:gap-6">
               {plans.map((plan) => (
                 <article
-                  className="flex h-full flex-col rounded-[2rem] border border-red-500/15 bg-red-950/5 p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)]"
+                  className="flex h-full flex-col rounded-[1.6rem] border border-red-500/15 bg-red-950/5 p-4 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:rounded-[2rem] sm:p-6"
                   key={plan.name}
                   data-reveal
                   data-reveal-delay={plan.name === "START" ? 60 : plan.name === "PROFESSIONAL" ? 140 : 220}
@@ -643,18 +643,18 @@ export default function AkelMedPublicPage() {
                   <p className="text-xs font-semibold uppercase tracking-[0.28em] text-red-900/60">
                     Plano {plan.name}
                   </p>
-                  <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
+                  <h3 className="mt-3 text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl">
                     {plan.name}
                   </h3>
-                  <p className="mt-4 text-sm leading-7 text-slate-700">
+                  <p className="mt-3 text-sm leading-6 text-slate-700 sm:mt-4 sm:leading-7">
                     {plan.summary}
                   </p>
 
-                  <div className="mt-6 flex-1 rounded-2xl border border-red-500/10 bg-white/90 p-5">
+                  <div className="mt-4 flex-1 rounded-2xl border border-red-500/10 bg-white/90 p-4 sm:mt-6 sm:p-5">
                     <p className="text-sm font-semibold uppercase tracking-[0.22em] text-red-900/70">
                       Módulos
                     </p>
-                    <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+                    <ul className="mt-3 space-y-2.5 text-sm leading-6 text-slate-700 sm:mt-4 sm:space-y-3 sm:leading-7">
                       {plan.includes.map((item) => (
                         <li className="flex gap-3" key={item}>
                           <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-red-900/70" />
@@ -663,11 +663,11 @@ export default function AkelMedPublicPage() {
                       ))}
                     </ul>
 
-                    <div className="mt-5 rounded-2xl border border-red-500/10 bg-red-950/5 p-4">
+                    <div className="mt-4 rounded-2xl border border-red-500/10 bg-red-950/5 p-4 sm:mt-5">
                       <p className="text-sm font-semibold uppercase tracking-[0.22em] text-red-900/70">
                         Limites
                       </p>
-                      <div className="mt-3 space-y-2 text-sm leading-7 text-slate-700">
+                      <div className="mt-3 space-y-2 text-sm leading-6 text-slate-700 sm:leading-7">
                         <p className="flex flex-wrap items-center gap-2">
                           <strong>Usuários:</strong> {plan.limits.users}
                           {plan.name === "ENTERPRISE" ? (
@@ -688,11 +688,11 @@ export default function AkelMedPublicPage() {
                     </div>
 
                     {plan.bonus?.length ? (
-                      <div className="mt-5 rounded-2xl border border-red-500/10 bg-red-50 p-4">
+                      <div className="mt-4 rounded-2xl border border-red-500/10 bg-red-50 p-4 sm:mt-5">
                         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-red-900/70">
                           Bonus
                         </p>
-                        <ul className="mt-3 space-y-2 text-sm leading-7 text-slate-700">
+                        <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700 sm:leading-7">
                           {plan.bonus.map((item) => (
                             <li className="flex gap-3" key={item}>
                               <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-red-900/70" />
@@ -704,9 +704,9 @@ export default function AkelMedPublicPage() {
                     ) : null}
                   </div>
 
-                  <div className="mt-auto pt-6">
+                  <div className="mt-4 pt-4 sm:mt-auto sm:pt-6">
                     <div className="flex flex-wrap items-end gap-2">
-                      <p className="text-3xl font-semibold tracking-tight text-red-900">
+                      <p className="text-2xl font-semibold tracking-tight text-red-900 sm:text-3xl">
                         {plan.price}
                       </p>
                       {plan.priceSuffix ? (
@@ -732,23 +732,23 @@ export default function AkelMedPublicPage() {
               ))}
             </div>
 
-            <p className="mt-8 max-w-4xl text-xs leading-6 text-slate-500" data-reveal data-reveal-delay={180}>
+            <p className="mt-6 max-w-4xl text-xs leading-5 text-slate-500 sm:mt-8 sm:leading-6" data-reveal data-reveal-delay={180}>
               Todos os planos possuem avaliação gratuita por 7 dias. Após esse
               período, é cobrada a taxa de implementação no valor da
               mensalidade do plano escolhido. A primeira mensalidade é
               proporcional aos dias usados a partir da implementação.
             </p>
 
-            <footer className="mt-14 overflow-hidden rounded-[2.5rem] border border-red-500/10 bg-[#111827] text-white shadow-[0_28px_80px_rgba(15,23,42,0.22)]" data-reveal data-reveal-delay={220}>
-              <div className="grid gap-8 px-6 py-10 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:px-10 lg:py-12">
+            <footer className="mt-10 overflow-hidden rounded-[2.5rem] border border-red-500/10 bg-[#111827] text-white shadow-[0_28px_80px_rgba(15,23,42,0.22)] sm:mt-14" data-reveal data-reveal-delay={220}>
+              <div className="grid gap-6 px-4 py-8 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:px-10 lg:py-12">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.32em] text-white/55">
                     Entre em contato
                   </p>
-                  <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+                  <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-4xl">
                     Descubra como o AkelMed pode ajudar no dia a dia do seu consultório e transformar a gestão da sua clínica.
                   </h2>
-                  <p className="mt-4 max-w-2xl text-sm leading-7 text-white/72 sm:text-base">
+                  <p className="mt-4 max-w-2xl text-sm leading-6 text-white/72 sm:leading-7 sm:text-base">
                     Fale com a gente para tirar dúvidas, e solicite uma demonstração gratuita do sistema, para conhecer na prática as funcionalidades e como elas podem facilitar a rotina do seu consultório.
                   </p>
 
@@ -771,8 +771,8 @@ export default function AkelMedPublicPage() {
                   </div>
                 </div>
 
-                <div className="grid gap-4">
-                  <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+                <div className="grid gap-3 sm:gap-4">
+                  <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-4 sm:p-5">
                     <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/55">
                       Contato
                     </p>
@@ -782,7 +782,7 @@ export default function AkelMedPublicPage() {
                     </div>
                   </div>
 
-                  <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+                  <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-4 sm:p-5">
                     <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/55">
                       Resumo
                     </p>
@@ -792,7 +792,7 @@ export default function AkelMedPublicPage() {
                     </p>
                   </div>
 
-                  <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+                  <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-4 sm:p-5">
                     <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/55">
                       Redes sociais
                     </p>
@@ -821,8 +821,8 @@ export default function AkelMedPublicPage() {
                 </div>
               </div>
 
-              <div className="border-t border-white/10 px-6 py-5 sm:px-8 lg:px-10">
-                <div className="flex flex-col gap-3 text-sm text-white/60 lg:flex-row lg:items-center lg:justify-between">
+              <div className="border-t border-white/10 px-4 py-4 sm:px-8 lg:px-10">
+                <div className="flex flex-col gap-2 text-sm text-white/60 lg:flex-row lg:items-center lg:justify-between">
                   <p>Akelm Tecnologia LTDA</p>
                   <p>Caçapava do Sul - RS</p>
                   <p>
