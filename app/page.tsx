@@ -16,7 +16,7 @@ import Footer from "@/components/Footer/Footer";
 import ScrollMotion from "@/components/ScrollMotion/ScrollMotion";
 import HomeFaqDrawer from "@/components/HomeFaqDrawer";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://akelm.com.br";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.akelm.com.br";
 
 type HomeFaq = {
   answer: string;
@@ -208,3 +208,4 @@ export default function Home() {
     </>
   );
 }
+

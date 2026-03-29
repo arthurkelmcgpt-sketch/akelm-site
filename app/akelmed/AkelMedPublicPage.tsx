@@ -403,7 +403,7 @@ const buildWhatsAppLink = (planName: string) => {
   return `https://wa.me/55999171727?text=${encodeURIComponent(message)}`;
 };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://akelm.com.br";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.akelm.com.br";
 
 const akelmedFaqs = [
   {
@@ -839,6 +839,7 @@ export default function AkelMedPublicPage() {
     </>
   );
 }
+
 
 
 

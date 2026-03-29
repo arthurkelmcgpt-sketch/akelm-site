@@ -48,3 +48,4 @@ export const metadata: Metadata = {
 export default function AkelMedPage() {
   return <AkelMedPublicPage />;
 }
+

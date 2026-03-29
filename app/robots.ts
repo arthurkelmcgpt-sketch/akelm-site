@@ -1,6 +1,6 @@
 ﻿import type { MetadataRoute } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://akelm.com.br";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.akelm.com.br";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -13,3 +13,4 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: `${siteUrl}/sitemap.xml`,
   };
 }
+

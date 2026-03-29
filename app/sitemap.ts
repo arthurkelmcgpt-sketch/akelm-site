@@ -1,6 +1,6 @@
 ﻿import type { MetadataRoute } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://akelm.com.br";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.akelm.com.br";
 
 const routes = [
   {
@@ -23,3 +23,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified,
   }));
 }
+

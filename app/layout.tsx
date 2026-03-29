@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://akelm.com.br";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.akelm.com.br";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -54,3 +54,4 @@ export default function RootLayout({
     </html>
   );
 }
+
