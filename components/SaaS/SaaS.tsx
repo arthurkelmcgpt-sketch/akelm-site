@@ -73,7 +73,7 @@ export default function SaaS() {
           <div className="relative h-[380px] rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
             <div className="scroll-parallax-media h-full" data-parallax="12">
               <Image
-                src="/images/saas.jpg"
+                src="/images/Plataformas-SaaS.png"
                 alt="Plataformas SaaS"
                 fill
                 className="object-cover"

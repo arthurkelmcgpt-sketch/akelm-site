@@ -49,14 +49,14 @@ export default function Contact() {
           >
 
             <a
-              href="https://wa.me/5555999171727"
+              href="https://wa.me/55999171727"
               className="px-8 py-4 bg-[#EF4444] text-white rounded-lg font-medium transition hover:bg-red-600"
             >
               Falar no WhatsApp
             </a>
 
             <a
-              href="mailto:arthur.kelm@outlook.com"
+              href="mailto:arthur@akelm.com.br"
               className="px-8 py-4 border border-gray-400 text-[#111827] rounded-lg font-medium transition hover:border-[#111827]"
             >
               Enviar email

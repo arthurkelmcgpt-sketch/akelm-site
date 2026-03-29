@@ -76,7 +76,7 @@ export default function Network() {
           <div className="relative h-[380px] rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
             <div className="scroll-parallax-media h-full" data-parallax="12">
               <Image
-                src="/images/networks.jpg"
+                src="/images/Gestão-de-Redes.png"
                 alt="Infraestrutura de rede"
                 fill
                 className="object-cover"

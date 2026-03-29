@@ -1,4 +1,4 @@
-import { Network, Code, Cloud, Cpu } from "lucide-react";
+﻿import { Network, Code, Cloud, Cpu } from "lucide-react";
 
 const solutions = [
   {
@@ -6,38 +6,37 @@ const solutions = [
     title: "Gestão de Redes",
     link: "#redes",
     description:
-      "Monitoramento, infraestrutura e suporte técnico especializado para empresas que dependem de redes estáveis.",
+      "Gestão de redes para empresas em Caçapava do Sul e região, com monitoramento, infraestrutura e suporte técnico especializado para manter estabilidade, segurança e desempenho.",
   },
   {
     icon: Code,
     title: "Desenvolvimento de Sistemas",
     link: "#sistemas",
     description:
-      "Criação de sistemas sob medida para automação de processos e digitalização de operações empresariais.",
+      "Desenvolvimento de sistemas sob medida para automatizar processos, digitalizar operações empresariais e criar fluxos mais eficientes.",
   },
   {
     icon: Cloud,
     title: "Plataformas SaaS",
     link: "#saas",
     description:
-      "Desenvolvimento de plataformas web escaláveis com foco em multiusuários, cloud e alta disponibilidade.",
+      "Plataformas SaaS escaláveis para empresas, com foco em multiusuários, cloud, alta disponibilidade e crescimento sustentável.",
   },
   {
     icon: Cpu,
     title: "Sistemas Dedicados",
     link: "#dedicados",
     description:
-      "Software corporativo desenvolvido especificamente para atender demandas exclusivas de cada empresa.",
+      "Software corporativo desenvolvido especificamente para atender demandas exclusivas de cada empresa, com fluxos personalizados.",
   },
 ];
 
 export default function Solutions() {
   return (
-    <section id="solucoes" className="w-full py-28 bg-[#F3F4F6]">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-
+    <section id="solucoes" className="w-full bg-[#F3F4F6] py-28">
+      <div className="mx-auto max-w-7xl px-6 text-center">
         <h2
-          className="text-4xl md:text-5xl font-bold tracking-tight text-[#111827]"
+          className="text-4xl font-bold tracking-tight text-[#111827] md:text-5xl"
           data-reveal
           data-reveal-delay={40}
           data-reveal-origin="up"
@@ -46,53 +45,46 @@ export default function Solutions() {
         </h2>
 
         <p
-          className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto"
+          className="mx-auto mt-6 max-w-3xl text-lg text-gray-600"
           data-reveal
           data-reveal-delay={100}
           data-reveal-origin="up"
         >
-          A Akelm Tecnologia atua no desenvolvimento de sistemas,
-          plataformas SaaS e gestão de infraestrutura de redes,
-          oferecendo soluções completas para empresas.
+          A Akelm Tecnologia atua com gestão de redes, desenvolvimento de
+          sistemas, plataformas SaaS e sistemas dedicados para empresas que
+          precisam de soluções em T.I claras, estáveis e sob medida.
         </p>
 
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
+        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {solutions.map((item, index) => {
             const Icon = item.icon;
 
             return (
               <a
-                key={index}
+                key={item.title}
                 href={item.link}
-                className="group block bg-white p-8 rounded-2xl border border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                className="group block rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
                 data-reveal
                 data-reveal-delay={140 + index * 70}
                 data-reveal-origin={index % 2 === 0 ? "left" : "right"}
               >
-
                 <div className="flex items-center gap-4">
-
-                  <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-red-50 group-hover:bg-red-100 transition">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-50 transition group-hover:bg-red-100">
                     <Icon className="text-[#EF4444]" size={26} />
                   </div>
 
                   <h3 className="text-xl font-semibold text-[#111827]">
                     {item.title}
                   </h3>
-
                 </div>
 
-                <p className="mt-5 text-gray-600 leading-relaxed">
+                <p className="mt-5 text-left leading-relaxed text-gray-600">
                   {item.description}
                 </p>
-
               </a>
             );
           })}
-
         </div>
-
       </div>
     </section>
   );

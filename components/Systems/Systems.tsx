@@ -21,7 +21,7 @@ export default function Systems() {
           <div className="relative h-[380px] rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
             <div className="scroll-parallax-media h-full" data-parallax="12">
               <Image
-                src="/images/development.jpg"
+                src="/images/Desenvolvimento-de-Sistemas.png"
                 alt="Desenvolvimento de sistemas"
                 fill
                 className="object-cover"

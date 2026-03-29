@@ -19,7 +19,7 @@ export default function Dedicated() {
           <div className="relative h-[380px] rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
             <div className="scroll-parallax-media h-full" data-parallax="12">
               <Image
-                src="/images/dedicated.jpg"
+                src="/images/Sistemas-Dedicados.png"
                 alt="Sistema corporativo dedicado"
                 fill
                 className="object-cover"
