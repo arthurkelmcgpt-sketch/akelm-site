@@ -404,6 +404,7 @@ const buildWhatsAppLink = (planName: string) => {
 };
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.akelm.com.br";
+const funcionalidadesUrl = `${siteUrl}/akelmed/funcionalidades`;
 
 const akelmedFaqs = [
   {
@@ -442,7 +443,7 @@ const akelmedStructuredData = [
       "AkelMed é uma plataforma completa para gestão de consultórios e clínicas médicas, com módulos para agenda, atendimento, financeiro, pacientes e equipe.",
     name: "AkelMed",
     operatingSystem: "Web",
-    url: `${siteUrl}/akelmed`,
+    url: funcionalidadesUrl,
   },
   {
     "@context": "https://schema.org",
@@ -466,8 +467,23 @@ export default function AkelMedPublicPage() {
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(akelmedStructuredData) }} />
 
-      <main className="min-h-screen bg-[linear-gradient(180deg,#f7f5f1_0%,#f1ece4_100%)] text-slate-900">
-        <section className="mx-auto w-full max-w-7xl px-3 py-4 sm:px-6 sm:py-10 lg:py-12">
+      <main className="relative isolate min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+        <div className="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
+          <Image
+            src="/images/akelmed-sales-bkg-3.png"
+            alt=""
+            fill
+            priority
+            quality={100}
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-slate-950/30" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),rgba(255,255,255,0.02)_36%,rgba(15,23,42,0.16)_72%,rgba(15,23,42,0.34))]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.08)_0%,rgba(15,23,42,0.24)_55%,rgba(15,23,42,0.42)_100%)]" />
+        </div>
+
+        <section className="relative z-10 mx-auto w-full max-w-7xl px-3 pb-10 pt-20 sm:px-6 sm:pb-16 sm:pt-24 lg:pb-20">
           <div className="rounded-[2.25rem] border border-slate-200 bg-white/75 p-4 shadow-[0_30px_90px_rgba(15,23,42,0.08)] backdrop-blur" data-reveal>
             <div className="relative overflow-hidden rounded-[1.9rem] border border-slate-200 bg-slate-950 shadow-[0_28px_80px_rgba(15,23,42,0.18)]">
               <div className="scroll-parallax-media relative min-h-[340px] sm:aspect-[16/9] sm:min-h-[540px]" data-parallax="10">
@@ -520,13 +536,13 @@ export default function AkelMedPublicPage() {
 
           <div className="mt-6 sm:mt-12">
             <div className="max-w-3xl" data-reveal data-reveal-delay={60}>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-red-900/70">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-red-300">
                 Módulos da plataforma
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                 Todos os recursos que você precisa para organizar o seu consultório em um só lugar.
               </h2>
-              <p className="mt-4 text-base leading-8 text-slate-600">
+              <p className="mt-4 text-base leading-8 text-slate-200/85">
                 Veja como cada módulo do sistema AkelMed foi pensado para atender às necessidades específicas do seu consultório, desde a recepção até o atendimento médico e a gestão financeira, tudo interligado em uma experiência fluida e eficiente.
               </p>
             </div>
@@ -534,7 +550,7 @@ export default function AkelMedPublicPage() {
             <div className="mt-6 grid gap-4 sm:mt-8 sm:gap-6">
               {modules.map((module, index) => (
                 <article
-                  className="overflow-hidden rounded-[1.6rem] border border-red-500/15 bg-red-950/5 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:rounded-[2rem]"
+                  className="overflow-hidden rounded-[1.6rem] border border-white/10 bg-slate-950/72 shadow-[0_24px_70px_rgba(0,0,0,0.32)] backdrop-blur-sm sm:rounded-[2rem]"
                   key={module.title}
                   data-reveal
                   data-reveal-delay={index * 80 + 80}
@@ -546,10 +562,10 @@ export default function AkelMedPublicPage() {
                         index % 2 === 1 ? "lg:order-2" : "",
                       ].join(" ")}
                     >
-                      <p className="text-xs font-semibold uppercase tracking-[0.26em] text-red-900/60">
+                      <p className="text-xs font-semibold uppercase tracking-[0.26em] text-red-300">
                         {module.title}
                       </p>
-                      <p className="mt-3 max-w-xl text-sm leading-6 text-slate-700 sm:mt-4 sm:leading-7 sm:text-base">
+                      <p className="mt-3 max-w-xl text-sm leading-6 text-slate-200/85 sm:mt-4 sm:leading-7 sm:text-base">
                         {module.summary}
                       </p>
                     </div>
@@ -571,7 +587,7 @@ export default function AkelMedPublicPage() {
                     </div>
                   </div>
 
-                  <details className="group border-t border-red-500/10 bg-red-950/5 px-4 py-4 sm:px-6 sm:py-5 sm:px-8">
+                  <details className="group border-t border-white/10 bg-slate-950/35 px-4 py-4 sm:px-6 sm:py-5 sm:px-8">
                     <summary className="flex cursor-pointer list-none items-center justify-between rounded-2xl border border-red-500/15 bg-white/90 px-3 py-2 text-xs font-medium text-slate-700 transition hover:border-red-200 hover:bg-red-50/60 sm:px-4 sm:py-3 sm:text-sm">
                       <span>Veja todas as funcionalidades deste módulo</span>
                       <span className="text-red-900 transition group-open:rotate-45">
@@ -621,13 +637,13 @@ export default function AkelMedPublicPage() {
 
           <section className="mt-8 sm:mt-12" data-reveal data-reveal-delay={120}>
             <div className="max-w-3xl" data-reveal data-reveal-delay={60}>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-red-900/70">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-red-300">
                 Planos
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                 Escolha o plano que melhor encaixa na sua demanda.
               </h2>
-              <p className="mt-4 text-base leading-8 text-slate-600">
+              <p className="mt-4 text-base leading-8 text-slate-200/85">
                 Todos os planos contemplam implementação, treinamento e suporte online 24/7.
               </p>
             </div>
@@ -635,18 +651,18 @@ export default function AkelMedPublicPage() {
             <div className="mt-6 grid gap-4 lg:grid-cols-3 sm:mt-8 sm:gap-6">
               {plans.map((plan) => (
                 <article
-                  className="flex h-full flex-col rounded-[1.6rem] border border-red-500/15 bg-red-950/5 p-4 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:rounded-[2rem] sm:p-6"
+                  className="flex h-full flex-col rounded-[1.6rem] border border-white/10 bg-slate-950/72 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.32)] backdrop-blur-sm sm:rounded-[2rem] sm:p-6"
                   key={plan.name}
                   data-reveal
                   data-reveal-delay={plan.name === "START" ? 60 : plan.name === "PROFESSIONAL" ? 140 : 220}
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-red-900/60">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-red-300">
                     Plano {plan.name}
                   </p>
-                  <h3 className="mt-3 text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl">
+                  <h3 className="mt-3 text-xl font-semibold tracking-tight text-white sm:text-2xl">
                     {plan.name}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-700 sm:mt-4 sm:leading-7">
+                  <p className="mt-3 text-sm leading-6 text-slate-200/85 sm:mt-4 sm:leading-7">
                     {plan.summary}
                   </p>
 
@@ -706,16 +722,16 @@ export default function AkelMedPublicPage() {
 
                   <div className="mt-4 pt-4 sm:mt-auto sm:pt-6">
                     <div className="flex flex-wrap items-end gap-2">
-                      <p className="text-2xl font-semibold tracking-tight text-red-900 sm:text-3xl">
+                      <p className="text-2xl font-semibold tracking-tight text-red-300 sm:text-3xl">
                         {plan.price}
                       </p>
                       {plan.priceSuffix ? (
-                        <p className="pb-1 text-xs font-medium uppercase tracking-[0.24em] text-slate-500">
+                        <p className="pb-1 text-xs font-medium uppercase tracking-[0.24em] text-slate-300/80">
                           {plan.priceSuffix}
                         </p>
                       ) : null}
                     </div>
-                    <p className="mt-2 text-xs font-medium uppercase tracking-[0.24em] text-slate-500">
+                    <p className="mt-2 text-xs font-medium uppercase tracking-[0.24em] text-slate-300/80">
                       {plan.noteBelowPrice}
                     </p>
                   </div>
@@ -732,7 +748,7 @@ export default function AkelMedPublicPage() {
               ))}
             </div>
 
-            <p className="mt-6 max-w-4xl text-xs leading-5 text-slate-500 sm:mt-8 sm:leading-6" data-reveal data-reveal-delay={180}>
+            <p className="mt-6 max-w-4xl text-xs leading-5 text-slate-300/80 sm:mt-8 sm:leading-6" data-reveal data-reveal-delay={180}>
               Todos os planos possuem avaliação gratuita por 7 dias. Após esse
               período, é cobrada a taxa de implementação no valor da
               mensalidade do plano escolhido. A primeira mensalidade é

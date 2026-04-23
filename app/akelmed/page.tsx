@@ -3,9 +3,9 @@
 import AkelMedPublicPage from "./AkelMedPublicPage";
 
 export const metadata: Metadata = {
-  title: "AkelMed",
+  title: "AkelMed | Sistema para clínicas e consultórios",
   description:
-    "AkelMed é uma plataforma completa para gestão de consultórios e clínicas médicas, com módulos para agenda, atendimento, financeiro, pacientes e equipe.",
+    "AkelMed é um sistema para clínicas e consultórios que organiza agenda, pacientes, atendimento e financeiro com uma apresentação mais comercial e voltada para conversão.",
   alternates: {
     canonical: "/akelmed",
   },
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "AkelMed | Gestão completa para clínicas e consultórios",
+    title: "AkelMed | Sistema para clínicas e consultórios",
     description:
-      "AkelMed é uma plataforma completa para gestão de consultórios e clínicas médicas, com módulos para agenda, atendimento, financeiro, pacientes e equipe.",
+      "AkelMed é um sistema para clínicas e consultórios que organiza agenda, pacientes, atendimento e financeiro com uma apresentação mais comercial e voltada para conversão.",
     url: "/akelmed",
     type: "website",
     images: [
@@ -32,15 +32,15 @@ export const metadata: Metadata = {
         url: "/images/akelmed/gemini-header-akelmed-3.png",
         width: 1200,
         height: 630,
-        alt: "AkelMed - gestão completa para clínicas e consultórios",
+        alt: "AkelMed - sistema para clínicas e consultórios",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AkelMed | Gestão completa para clínicas e consultórios",
+    title: "AkelMed | Sistema para clínicas e consultórios",
     description:
-      "AkelMed é uma plataforma completa para gestão de consultórios e clínicas médicas, com módulos para agenda, atendimento, financeiro, pacientes e equipe.",
+      "AkelMed é um sistema para clínicas e consultórios que organiza agenda, pacientes, atendimento e financeiro com uma apresentação mais comercial e voltada para conversão.",
     images: ["/images/akelmed/gemini-header-akelmed-3.png"],
   },
 };

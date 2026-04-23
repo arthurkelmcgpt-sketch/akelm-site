@@ -4,6 +4,7 @@ import Link from "next/link";
 const links = [
   { label: "Soluções", href: "/#solucoes" },
   { label: "AkelMed", href: "/akelmed" },
+  { label: "CargaViva", href: "/cargaviva" },
   { label: "Sobre", href: "/#sobre" },
   { label: "Contato", href: "/#contato" },
 ];

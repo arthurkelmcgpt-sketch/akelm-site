@@ -39,6 +39,9 @@ export default function Footer({ variant = "dark" }: FooterProps) {
             <Link href="/akelmed" className={`transition ${linkClass}`}>
               AkelMed
             </Link>
+            <Link href="/cargaviva" className={`transition ${linkClass}`}>
+              CargaViva
+            </Link>
             <Link href="/#sobre" className={`transition ${linkClass}`}>
               Sobre
             </Link>

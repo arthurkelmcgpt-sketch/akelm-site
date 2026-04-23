@@ -13,6 +13,21 @@ const routes = [
     priority: 0.9,
     url: `${siteUrl}/akelmed`,
   },
+  {
+    changeFrequency: "monthly",
+    priority: 0.9,
+    url: `${siteUrl}/cargaviva`,
+  },
+  {
+    changeFrequency: "yearly",
+    priority: 0.5,
+    url: `${siteUrl}/cargaviva/termosdeuso`,
+  },
+  {
+    changeFrequency: "monthly",
+    priority: 0.8,
+    url: `${siteUrl}/akelmed/funcionalidades`,
+  },
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
