@@ -1,0 +1,72 @@
+
+> akelm-site@0.1.0 dev
+> next dev -p 3002
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3002
+- Network:       http://192.168.2.5:3002
+
+✓ Starting...
+Creating turbopack project {
+  dir: 'C:\\Users\\arthu\\OneDrive\\Área de Trabalho\\akelm-site',
+  testMode: true
+}
+✓ Ready in 1334ms
+ GET /cargaviva 200 in 1255ms (compile: 801ms, render: 453ms)
+ GET /cargaviva/apresenta%C3%A7%C3%A3o 404 in 165ms (compile: 83ms, render: 83ms)
+ GET /cargaviva/apresenta%C3%A7%C3%A3o 404 in 51ms (compile: 7ms, render: 44ms)
+ GET /cargaviva/apresenta%C3%A7%C3%A3o 404 in 50ms (compile: 6ms, render: 44ms)
+ GET /cargaviva/apresenta%C3%A7%C3%A3o 404 in 223ms (compile: 78ms, render: 145ms)
+ GET /cargaviva/apresenta%C3%A7%C3%A3o 404 in 1091ms (compile: -182161µs, proxy.ts: 1063ms, render: 211ms)
+ GET /cargaviva/apresenta%C3%A7%C3%A3o 404 in 1103ms (compile: -12270µs, proxy.ts: 1089ms, render: 26ms)
+ GET /cargaviva/apresenta%C3%A7ao 404 in 66ms (compile: 10ms, proxy.ts: 5ms, render: 52ms)
+ GET /cargaviva/apresentacao 200 in 1471ms (compile: 1152ms, proxy.ts: 4ms, render: 315ms)
+ GET /cargaviva/apresenta%C3%A7%C3%A3o 200 in 1528ms (compile: 1252ms, proxy.ts: 4ms, render: 273ms)
+ GET /cargaviva/apresentacao 200 in 297ms (compile: 4ms, proxy.ts: 4ms, render: 288ms)
+✓ Compiled in 14ms
+✓ Compiled in 21ms
+ GET /cargaviva/apresentacao 200 in 117ms (compile: 24ms, render: 93ms)
+ GET /cargaviva/apresentacao 200 in 523ms (compile: 12ms, proxy.ts: 8ms, render: 503ms)
+ GET /cargaviva/apresentacao 200 in 531ms (compile: 5ms, proxy.ts: 52ms, render: 474ms)
+ GET /cargaviva/apresentacao 200 in 435ms (compile: 11ms, proxy.ts: 8ms, render: 416ms)
+ GET /cargaviva/apresentacao 200 in 426ms (compile: 5ms, proxy.ts: 7ms, render: 413ms)
+ GET /cargaviva/apresentacao 200 in 435ms (compile: 6ms, proxy.ts: 9ms, render: 420ms)
+ GET /cargaviva/apresentacao 200 in 423ms (compile: 6ms, proxy.ts: 9ms, render: 408ms)
+ GET /cargaviva/apresentacao 200 in 475ms (compile: 6ms, proxy.ts: 7ms, render: 462ms)
+ GET /cargaviva/apresentacao 200 in 466ms (compile: 12ms, proxy.ts: 7ms, render: 447ms)
+ GET /cargaviva/apresentacao 200 in 492ms (compile: 10ms, proxy.ts: 9ms, render: 473ms)
+ GET /cargaviva/apresentacao 200 in 490ms (compile: 7ms, proxy.ts: 7ms, render: 476ms)
+ GET /cargaviva/apresentacao 200 in 436ms (compile: 6ms, proxy.ts: 8ms, render: 422ms)
+ GET /cargaviva/apresentacao 200 in 442ms (compile: 7ms, proxy.ts: 7ms, render: 428ms)
+ GET /cargaviva/apresentacao 200 in 490ms (compile: 6ms, proxy.ts: 5ms, render: 478ms)
+ GET /cargaviva/apresentacao 200 in 475ms (compile: 7ms, proxy.ts: 13ms, render: 455ms)
+ GET /cargaviva/apresentacao 200 in 377ms (compile: 7ms, proxy.ts: 6ms, render: 364ms)
+ GET /cargaviva/apresentacao 200 in 435ms (compile: 7ms, proxy.ts: 6ms, render: 421ms)
+ GET /cargaviva/apresentacao 200 in 432ms (compile: 7ms, proxy.ts: 10ms, render: 415ms)
+ GET /cargaviva/apresentacao 200 in 373ms (compile: 8ms, proxy.ts: 6ms, render: 359ms)
+ GET /cargaviva/apresentacao 200 in 419ms (compile: 6ms, proxy.ts: 6ms, render: 407ms)
+ GET /cargaviva/apresentacao 200 in 411ms (compile: 6ms, proxy.ts: 6ms, render: 399ms)
+ GET /cargaviva/apresentacao 200 in 353ms (compile: 7ms, proxy.ts: 7ms, render: 339ms)
+ GET /cargaviva/apresentacao 200 in 345ms (compile: 5ms, proxy.ts: 6ms, render: 335ms)
+ GET /cargaviva/apresentacao 200 in 410ms (compile: 6ms, proxy.ts: 6ms, render: 398ms)
+ GET /cargaviva/apresentacao 200 in 355ms (compile: 6ms, proxy.ts: 8ms, render: 341ms)
+ GET /cargaviva/apresentacao 200 in 413ms (compile: 5ms, proxy.ts: 5ms, render: 403ms)
+ GET /cargaviva/apresentacao 200 in 413ms (compile: 5ms, proxy.ts: 6ms, render: 401ms)
+ GET /cargaviva/apresentacao 200 in 352ms (compile: 6ms, proxy.ts: 5ms, render: 340ms)
+ GET /cargaviva/apresentacao 200 in 399ms (compile: 6ms, proxy.ts: 6ms, render: 386ms)
+ GET /cargaviva/apresentacao 200 in 394ms (compile: 5ms, proxy.ts: 6ms, render: 383ms)
+ GET /cargaviva/apresentacao 200 in 423ms (compile: 8ms, proxy.ts: 5ms, render: 410ms)
+ GET /cargaviva/apresentacao 200 in 449ms (compile: 5ms, proxy.ts: 5ms, render: 439ms)
+ GET /cargaviva/apresentacao 200 in 471ms (compile: 5ms, proxy.ts: 6ms, render: 460ms)
+ GET /cargaviva/apresentacao 200 in 423ms (compile: 8ms, proxy.ts: 6ms, render: 410ms)
+ GET /cargaviva/apresentacao 200 in 426ms (compile: 5ms, proxy.ts: 6ms, render: 416ms)
+ GET /cargaviva/apresentacao 200 in 500ms (compile: 5ms, proxy.ts: 6ms, render: 488ms)
+ GET /cargaviva/apresentacao 200 in 482ms (compile: 7ms, proxy.ts: 6ms, render: 469ms)
+ GET /cargaviva/apresentacao 200 in 450ms (compile: 7ms, proxy.ts: 6ms, render: 438ms)
+ GET /cargaviva/apresentacao 200 in 435ms (compile: 8ms, proxy.ts: 5ms, render: 422ms)
+ GET /cargaviva/apresentacao 200 in 366ms (compile: 6ms, proxy.ts: 6ms, render: 354ms)
+ GET /cargaviva/apresentacao 200 in 300ms (compile: 8ms, proxy.ts: 7ms, render: 285ms)
+ GET /cargaviva/apresentacao 200 in 218ms (compile: 5ms, proxy.ts: 5ms, render: 207ms)
+ GET /cargaviva/apresentacao 200 in 150ms (compile: 6ms, proxy.ts: 7ms, render: 137ms)
+ GET /cargaviva/apresentacao 200 in 80ms (compile: 5ms, proxy.ts: 6ms, render: 69ms)
+[?25h
