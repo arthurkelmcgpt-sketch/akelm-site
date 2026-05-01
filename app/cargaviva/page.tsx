@@ -15,6 +15,12 @@ const buildWhatsAppLink = () => {
   return `https://wa.me/55999171727?text=${encodeURIComponent(message)}`;
 };
 
+const buildEarlyAccessWhatsAppLink = () => {
+  const message = "Desejo ter o acesso antecipado ao CargaViva Fretes";
+
+  return `https://wa.me/5555999171727?text=${encodeURIComponent(message)}`;
+};
+
 type PreviewBox = {
   align: "left" | "right";
   body: string;
@@ -247,6 +253,16 @@ export default function CargaVivaPage() {
               </div>
 
               <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  className="inline-flex w-full items-center justify-center rounded-[1rem] bg-gradient-to-r from-[#CA6702] to-[#f59e0b] px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.12em] text-white shadow-[0_22px_45px_rgba(202,103,2,0.34)] transition hover:-translate-y-0.5 hover:shadow-[0_26px_55px_rgba(202,103,2,0.42)] sm:text-base"
+                  href={buildEarlyAccessWhatsAppLink()}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  O aplicativo já está disponível por acesso antecipado,
+                  solicite acesso e saia na frente
+                </a>
+
                 <a
                   className="inline-flex items-center justify-center rounded-full bg-[#1B4332] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#24533f]"
                   href={buildWhatsAppLink()}

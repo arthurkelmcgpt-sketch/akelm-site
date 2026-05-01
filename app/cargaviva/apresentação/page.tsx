@@ -3,6 +3,7 @@ import Image from "next/image";
 import {
   Banknote,
   BarChart3,
+  BellRing,
   ClipboardCheck,
   CircleCheck,
   History,
@@ -17,6 +18,7 @@ import {
   MessageCircle,
   Phone,
   Mic2,
+  Navigation,
   Network,
   Radio,
   Route,
@@ -80,7 +82,7 @@ const flow = [
     icon: MapPinned,
     title: "Execução e Rastreamento",
     description:
-      "Antes de iniciar a viagem, o motorista confirma no app que conferiu a documentação obrigatória (GTA). Durante todo o percurso, o cliente pode acompanhar a localização do caminhão em tempo real pelo mapa.",
+      "Antes de iniciar a viagem, o motorista confirma no app que conferiu a documentação obrigatória (GTA). Durante o percurso, o cliente acompanha a localização em tempo real e a plataforma aplica uma camada de proteção contra desvio de rota.",
   },
   {
     icon: Star,
@@ -110,7 +112,7 @@ const differentials = [
   {
     title: "Rastreamento ao Vivo",
     description:
-      "Transparência total para o cliente, que pode acompanhar sua carga durante toda a viagem.",
+      "Transparência total para o cliente, que pode acompanhar sua carga durante toda a viagem, receber alertas se a localização for desabilitada e abrir a última coordenada capturada no Google Maps.",
   },
   {
     title: "Histórico de Parceria",
@@ -126,6 +128,33 @@ const differentials = [
     title: "Pagamento Automatizado",
     description:
       "A integração com o Asaas para cobranças via Pix automatiza a identificação dos pagamentos, tornando o processo mais rápido e menos suscetível a erros.",
+  },
+] as const;
+
+const routeProtectionFeatures = [
+  {
+    icon: ShieldCheck,
+    title: "Localização obrigatória durante o transporte",
+    description:
+      "O motorista não consegue iniciar a viagem sem localização ativa e permissão autorizada. Se a localização for desligada durante o transporte, o app bloqueia a navegação até que ela seja reabilitada.",
+  },
+  {
+    icon: BellRing,
+    title: "Alerta imediato para cliente e motorista",
+    description:
+      "Quando a localização é desabilitada, o backend registra o horário local do ocorrido. O cliente recebe uma notificação de alerta e o motorista também é avisado para reabilitar a localização.",
+  },
+  {
+    icon: MapPinned,
+    title: "Última posição preservada",
+    description:
+      "A tela do cliente mostra que o motorista desabilitou a localização, informa o horário correto e exibe a última localização capturada, com botão para abrir a coordenada no Google Maps.",
+  },
+  {
+    icon: Navigation,
+    title: "Finalização com raio de segurança",
+    description:
+      "O motorista só consegue finalizar o transporte se estiver dentro de 500 metros do destino marcado pelo cliente. Fora desse raio, o app explica o bloqueio e orienta acionar o suporte se a descarga tiver ocorrido no local correto.",
   },
 ] as const;
 
@@ -473,6 +502,57 @@ export default function CargaVivaPresentationPage() {
                         </p>
                       </article>
                     ))}
+                  </div>
+                </div>
+
+                <div className="mt-5 rounded-[1.5rem] border border-[#CA6702]/35 bg-[#CA6702]/12 p-5 shadow-[0_22px_55px_rgba(0,0,0,0.14)] backdrop-blur sm:p-6">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#CA6702] text-white">
+                      <ShieldCheck className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-[#f6a63a]">
+                        Segurança operacional
+                      </p>
+                      <h3 className="mt-1 text-xl font-semibold tracking-tight">
+                        Camada de proteção contra desvio de rota
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="mt-4 text-sm leading-7 text-white/76">
+                    O CargaViva trata o rastreamento como parte central da
+                    segurança do frete. Entre iniciar e finalizar o transporte,
+                    o app exige localização ativa, registra interrupções,
+                    notifica as partes e mantém evidências para que o cliente
+                    saiba exatamente o que aconteceu.
+                  </p>
+
+                  <div className="mt-5 grid gap-3">
+                    {routeProtectionFeatures.map((feature) => {
+                      const Icon = feature.icon;
+
+                      return (
+                        <article
+                          key={feature.title}
+                          className="rounded-[1rem] border border-white/10 bg-[#03170d]/42 p-4"
+                        >
+                          <div className="flex items-start gap-3">
+                            <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#f6a63a]">
+                              <Icon className="h-4 w-4" />
+                            </span>
+                            <div>
+                              <h4 className="text-sm font-semibold leading-6 text-white">
+                                {feature.title}
+                              </h4>
+                              <p className="mt-1 text-sm leading-6 text-white/70">
+                                {feature.description}
+                              </p>
+                            </div>
+                          </div>
+                        </article>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
