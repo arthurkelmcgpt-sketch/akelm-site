@@ -15,11 +15,8 @@ const buildWhatsAppLink = () => {
   return `https://wa.me/55999171727?text=${encodeURIComponent(message)}`;
 };
 
-const buildEarlyAccessWhatsAppLink = () => {
-  const message = "Desejo ter o acesso antecipado ao CargaViva Fretes";
-
-  return `https://wa.me/5555999171727?text=${encodeURIComponent(message)}`;
-};
+const earlyAccessFormLink =
+  "https://docs.google.com/forms/d/e/1FAIpQLSeDhNWwvRLLAVMvU3pv43vbc3-3zuQ4EexbpS5HJJ7OWGF94A/viewform?usp=dialog";
 
 type PreviewBox = {
   align: "left" | "right";
@@ -146,7 +143,7 @@ export default function CargaVivaPage() {
           <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
             <div className="flex flex-col items-center justify-center lg:items-center">
               <span className="inline-flex w-fit items-center rounded-full border border-[#e37c01]/12 bg-[#e37c01]/8 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-[#e37c01]">
-                Em breve
+                Já disponível
               </span>
 
               <h1 className="mt-5 max-w-xl text-center text-3xl font-semibold tracking-[-0.04em] text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.35)] sm:text-4xl lg:text-[3.25rem] lg:leading-[1.02]">
@@ -255,7 +252,7 @@ export default function CargaVivaPage() {
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
                   className="inline-flex w-full items-center justify-center rounded-[1rem] bg-gradient-to-r from-[#CA6702] to-[#f59e0b] px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.12em] text-white shadow-[0_22px_45px_rgba(202,103,2,0.34)] transition hover:-translate-y-0.5 hover:shadow-[0_26px_55px_rgba(202,103,2,0.42)] sm:text-base"
-                  href={buildEarlyAccessWhatsAppLink()}
+                  href={earlyAccessFormLink}
                   rel="noreferrer"
                   target="_blank"
                 >
