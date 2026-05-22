@@ -15,9 +15,6 @@ const buildWhatsAppLink = () => {
   return `https://wa.me/55999171727?text=${encodeURIComponent(message)}`;
 };
 
-const earlyAccessFormLink =
-  "https://docs.google.com/forms/d/e/1FAIpQLSeDhNWwvRLLAVMvU3pv43vbc3-3zuQ4EexbpS5HJJ7OWGF94A/viewform?usp=dialog";
-
 type PreviewBox = {
   align: "left" | "right";
   body: string;
@@ -67,7 +64,6 @@ const previewBoxes: PreviewBox[] = [
     title: "Conclusão e avaliação",
     tone: "dark",
   },
-  
 ] as const;
 
 const structuredData = {
@@ -82,14 +78,14 @@ const structuredData = {
 };
 
 export const metadata: Metadata = {
-  title: "CargaViva Fretes | Em breve",
+  title: "CargaViva Fretes",
   description:
-    "CargaViva Fretes é uma plataforma para organizar o transporte de animais com mais segurança, visibilidade e confiança. Página oficial em breve.",
+    "CargaViva Fretes é uma plataforma para organizar o transporte de animais com mais segurança, visibilidade e confiança.",
   alternates: {
     canonical: "/cargaviva",
   },
   openGraph: {
-    title: "CargaViva Fretes | Em breve",
+    title: "CargaViva Fretes",
     description:
       "Tecnologia para organizar o transporte de animais com mais segurança, visibilidade e confiança.",
     images: [
@@ -106,9 +102,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     description:
-      "Página em breve do CargaViva Fretes, plataforma para modernizar o transporte de animais.",
+      "CargaViva Fretes, plataforma para modernizar o transporte de animais.",
     images: ["/images/cargaviva/oferecimento.png"],
-    title: "CargaViva Fretes | Em breve",
+    title: "CargaViva Fretes",
   },
 };
 
@@ -157,14 +153,14 @@ export default function CargaVivaPage() {
               <div className="order-3 mt-6 w-full max-w-[500px]">
                 <div className="relative overflow-hidden rounded-[2rem] border border-white/12 bg-black/15 shadow-[0_28px_70px_rgba(22,49,38,0.2)]">
                   <div className="relative aspect-square w-full">
-                      <video
-                        autoPlay
-                        className="h-full w-full object-cover object-center"
-                        loop
-                        muted
-                        playsInline
-                        preload="auto"
-                      >
+                    <video
+                      autoPlay
+                      className="h-full w-full object-cover object-center"
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                    >
                       <source
                         src="/video/cargaviva-como-ser-solicitante-web.mp4"
                         type="video/mp4"
@@ -176,143 +172,145 @@ export default function CargaVivaPage() {
 
               <div className="order-2 mt-5 w-full max-w-[500px] rounded-[1.55rem] border border-[#ddd7cb] bg-white/92 p-4 text-center shadow-[0_18px_45px_rgba(27,67,50,0.05)]">
                 <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#9f5304]">
-                  Segurança e praticidade para quem precisa de fretes, mais demanda e visibilidade para os motoristas.
+                  Segurança e praticidade para quem precisa de fretes, mais
+                  demanda e visibilidade para os motoristas.
                 </p>
                 <p className="mt-2 text-sm leading-6 text-[#5f6d66]">
-                  Você pecuarista, já se encontrou na situação de precisar transportar seu rebanho e perder tempo correndo atrás de caminhoneiros? E você motorista, já teve dificulde para encontrar demanda por não conseguir chegar até os clientes? Seja você cliente ou motorista, o CargaViva Fretes é a sua nova ferramenta!
+                  Você pecuarista, já se encontrou na situação de precisar
+                  transportar seu rebanho e perder tempo correndo atrás de
+                  caminhoneiros? E você motorista, já teve dificulde para
+                  encontrar demanda por não conseguir chegar até os clientes?
+                  Seja você cliente ou motorista, o CargaViva Fretes é a sua
+                  nova ferramenta!
                 </p>
               </div>
             </div>
 
             <div className="grid gap-5">
-              <div
-                className="relative overflow-visible rounded-[2rem] border border-white/10 bg-white/8 p-4 shadow-[0_18px_50px_rgba(2,10,6,0.12)] backdrop-blur-[2px] sm:p-6"
-              >
-              <div className="inline-flex rounded-full border border-[#1B4332]/10 bg-white/85 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#1B4332] shadow-[0_12px_30px_rgba(27,67,50,0.08)]">
-                Fluxo de solicitação
-              </div>
+              <div className="relative overflow-visible rounded-[2rem] border border-white/10 bg-white/8 p-4 shadow-[0_18px_50px_rgba(2,10,6,0.12)] backdrop-blur-[2px] sm:p-6">
+                <div className="inline-flex rounded-full border border-[#1B4332]/10 bg-white/85 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#1B4332] shadow-[0_12px_30px_rgba(27,67,50,0.08)]">
+                  Fluxo de solicitação
+                </div>
 
-              <div className="mt-5 grid gap-4">
-                {previewBoxes.map((item, index) => {
-                  const isDark = item.tone === "dark";
-                  const isLeft = item.align === "left";
+                <div className="mt-5 grid gap-4">
+                  {previewBoxes.map((item, index) => {
+                    const isDark = item.tone === "dark";
+                    const isLeft = item.align === "left";
 
-                  return (
-                    <div
-                      key={item.title}
-                      className={[
+                    return (
+                      <div
+                        key={item.title}
+                        className={[
                           "group relative isolate z-0 flex overflow-visible transition-all duration-300 hover:z-50",
-                          isLeft ? "justify-start pr-8 sm:pr-14" : "justify-end pl-8 sm:pl-14",
+                          isLeft
+                            ? "justify-start pr-8 sm:pr-14"
+                            : "justify-end pl-8 sm:pl-14",
                         ].join(" ")}
                         style={{
-                          marginTop: index === 0 ? "0px" : index % 2 === 0 ? "-2px" : "6px",
+                          marginTop:
+                            index === 0 ? "0px" : index % 2 === 0 ? "-2px" : "6px",
                         }}
-                    >
-                      <div
-                        className={[
-                          "relative z-10 max-w-[320px] rounded-[1.45rem] border px-4 py-4 shadow-[0_18px_45px_rgba(27,67,50,0.08)] transition duration-300 ease-out group-hover:-translate-y-0.5 group-hover:shadow-[0_24px_55px_rgba(27,67,50,0.14)]",
-                          isDark
-                            ? "border-[#1B4332]/12 bg-[#1B4332] text-white"
-                            : "border-white/80 bg-white/92 text-slate-700",
-                        ].join(" ")}
                       >
-                        <p
-                          className={[
-                            "text-[0.65rem] font-semibold uppercase tracking-[0.22em]",
-                            isDark ? "text-[#f9d7ad]" : "text-[#9f5304]",
-                          ].join(" ")}
-                        >
-                          {item.title}
-                        </p>
-                        <p
-                          className={[
-                            "mt-2 text-sm leading-6",
-                            isDark ? "text-white/84" : "text-slate-700",
-                          ].join(" ")}
-                        >
-                          {item.body}
-                        </p>
-
                         <div
                           className={[
-                            "pointer-events-none absolute top-1/2 z-[60] w-[260px] -translate-y-1/2 rounded-[1.25rem] border border-white/70 bg-white/92 p-4 text-left shadow-[0_24px_70px_rgba(15,23,42,0.14)] backdrop-blur-md opacity-0 transition-all duration-300 ease-out group-hover:visible group-hover:opacity-100 group-hover:translate-y-[-50%] group-hover:scale-100 invisible scale-95",
-                            isLeft ? "left-[calc(100%+14px)]" : "right-[calc(100%+14px)]",
+                            "relative z-10 max-w-[320px] rounded-[1.45rem] border px-4 py-4 shadow-[0_18px_45px_rgba(27,67,50,0.08)] transition duration-300 ease-out group-hover:-translate-y-0.5 group-hover:shadow-[0_24px_55px_rgba(27,67,50,0.14)]",
+                            isDark
+                              ? "border-[#1B4332]/12 bg-[#1B4332] text-white"
+                              : "border-white/80 bg-white/92 text-slate-700",
                           ].join(" ")}
                         >
-                          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-[#1B4332]">
+                          <p
+                            className={[
+                              "text-[0.65rem] font-semibold uppercase tracking-[0.22em]",
+                              isDark ? "text-[#f9d7ad]" : "text-[#9f5304]",
+                            ].join(" ")}
+                          >
                             {item.title}
                           </p>
-                          <p className="mt-2 text-sm leading-6 text-slate-700">
-                            {item.detail}
+                          <p
+                            className={[
+                              "mt-2 text-sm leading-6",
+                              isDark ? "text-white/84" : "text-slate-700",
+                            ].join(" ")}
+                          >
+                            {item.body}
                           </p>
+
+                          <div
+                            className={[
+                              "pointer-events-none absolute top-1/2 z-[60] w-[260px] -translate-y-1/2 rounded-[1.25rem] border border-white/70 bg-white/92 p-4 text-left shadow-[0_24px_70px_rgba(15,23,42,0.14)] backdrop-blur-md opacity-0 transition-all duration-300 ease-out group-hover:visible group-hover:opacity-100 group-hover:translate-y-[-50%] group-hover:scale-100 invisible scale-95",
+                              isLeft
+                                ? "left-[calc(100%+14px)]"
+                                : "right-[calc(100%+14px)]",
+                            ].join(" ")}
+                          >
+                            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-[#1B4332]">
+                              {item.title}
+                            </p>
+                            <p className="mt-2 text-sm leading-6 text-slate-700">
+                              {item.detail}
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
-              </div>
 
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a
-                  className="inline-flex w-full items-center justify-center rounded-[1rem] bg-gradient-to-r from-[#CA6702] to-[#f59e0b] px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.12em] text-white shadow-[0_22px_45px_rgba(202,103,2,0.34)] transition hover:-translate-y-0.5 hover:shadow-[0_26px_55px_rgba(202,103,2,0.42)] sm:text-base"
-                  href={earlyAccessFormLink}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  O aplicativo já está disponível por acesso antecipado,
-                  solicite acesso e saia na frente
-                </a>
-
-                <a
-                  className="inline-flex items-center justify-center rounded-full bg-[#1B4332] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#24533f]"
-                  href={buildWhatsAppLink()}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  Saiba mais sobre o CargaViva Fretes
-                </a>
-
-                <a
-                  className="inline-flex items-center justify-center rounded-full border border-[#d7d1c2] bg-[#fffdf8] px-5 py-3 text-sm font-semibold text-[#163126] transition hover:border-[#CA6702]/30 hover:bg-[#fff7ed]"
-                  href="mailto:arthur@akelm.com.br"
-                >
-                  Falar com a Akelm
-                </a>
-
-                <Link
-                  className="inline-flex items-center justify-center rounded-full border border-[#1B4332]/12 bg-white px-5 py-3 text-sm font-semibold text-[#1B4332] transition hover:border-[#1B4332]/25 hover:bg-[#f8fbf8]"
-                  href="/cargaviva/termosdeuso"
-                >
-                  Ver termos de uso
-                </Link>
-
-                <Link
-                  className="inline-flex items-center justify-center rounded-full border border-[#1B4332]/12 bg-white px-5 py-3 text-sm font-semibold text-[#1B4332] transition hover:border-[#1B4332]/25 hover:bg-[#f8fbf8]"
-                  href="/cargaviva/politicadeprivacidade"
-                >
-                  Ver política de privacidade
-                </Link>
-
-                <div className="group relative">
-                  <button
-                    aria-disabled="true"
-                    className="inline-flex h-[46px] items-center gap-2 rounded-full border border-white/25 bg-black/45 px-4 text-left text-white/60 opacity-55 shadow-[0_14px_35px_rgba(2,10,6,0.16)] transition hover:opacity-85"
-                    type="button"
+              <div className="mt-6">
+                <div className="rounded-[1.6rem] border border-[#ca6702]/18 bg-white/92 p-4 shadow-[0_20px_55px_rgba(202,103,2,0.16)] backdrop-blur sm:p-5">
+                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-[#9f5304]">
+                    Baixe o aplicativo:
+                  </p>
+                  <a
+                    className="mt-3 inline-flex w-full items-center justify-center gap-3 rounded-[1.15rem] bg-gradient-to-r from-[#1B4332] to-[#2d6a4f] px-6 py-4 text-left text-white shadow-[0_22px_45px_rgba(27,67,50,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_28px_55px_rgba(27,67,50,0.4)]"
+                    href="https://play.google.com/store/apps/details?id=br.com.akelm.cargavivafretes"
+                    rel="noreferrer"
+                    target="_blank"
                   >
-                    <span className="h-0 w-0 border-y-[8px] border-l-[13px] border-y-transparent border-l-white/70" />
+                    <span className="h-0 w-0 border-y-[10px] border-l-[16px] border-y-transparent border-l-white/85" />
                     <span className="leading-none">
-                      <span className="block text-[0.5rem] font-semibold uppercase tracking-[0.14em]">
+                      <span className="block text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-white/75">
                         Disponível no
                       </span>
-                      <span className="block text-sm font-semibold">
+                      <span className="mt-1 block text-base font-semibold sm:text-lg">
                         Google Play
                       </span>
                     </span>
-                  </button>
-                  <span className="pointer-events-none absolute left-1/2 top-[calc(100%+8px)] z-50 -translate-x-1/2 rounded-full bg-white px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#1B4332] opacity-0 shadow-[0_12px_28px_rgba(2,10,6,0.18)] transition group-hover:opacity-100">
-                    Em breve
-                  </span>
+                  </a>
+                </div>
+
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <a
+                    className="inline-flex items-center justify-center rounded-full bg-[#1B4332] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#24533f]"
+                    href={buildWhatsAppLink()}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Saiba mais sobre o CargaViva Fretes
+                  </a>
+
+                  <a
+                    className="inline-flex items-center justify-center rounded-full border border-[#d7d1c2] bg-[#fffdf8] px-5 py-3 text-sm font-semibold text-[#163126] transition hover:border-[#CA6702]/30 hover:bg-[#fff7ed]"
+                    href="mailto:arthur@akelm.com.br"
+                  >
+                    Falar com a Akelm
+                  </a>
+
+                  <Link
+                    className="inline-flex items-center justify-center rounded-full border border-[#1B4332]/12 bg-white px-5 py-3 text-sm font-semibold text-[#1B4332] transition hover:border-[#1B4332]/25 hover:bg-[#f8fbf8]"
+                    href="/cargaviva/termosdeuso"
+                  >
+                    Ver termos de uso
+                  </Link>
+
+                  <Link
+                    className="inline-flex items-center justify-center rounded-full border border-[#1B4332]/12 bg-white px-5 py-3 text-sm font-semibold text-[#1B4332] transition hover:border-[#1B4332]/25 hover:bg-[#f8fbf8]"
+                    href="/cargaviva/politicadeprivacidade"
+                  >
+                    Ver política de privacidade
+                  </Link>
                 </div>
               </div>
             </div>
