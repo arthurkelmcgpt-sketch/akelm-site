@@ -359,20 +359,8 @@ export default function CargaVivaPresentationPage() {
             className="object-cover object-center"
             sizes="100vw"
           />
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "linear-gradient(90deg, rgba(3,23,13,0.96) 0%, rgba(3,23,13,0.82) 34%, rgba(3,23,13,0.35) 68%, rgba(3,23,13,0.18) 100%)",
-            }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "linear-gradient(180deg, rgba(3,23,13,0.08) 0%, rgba(3,23,13,0.32) 74%, #03170d 100%)",
-            }}
-          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,23,13,0.96)_0%,rgba(3,23,13,0.82)_34%,rgba(3,23,13,0.35)_68%,rgba(3,23,13,0.18)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,23,13,0.08)_0%,rgba(3,23,13,0.32)_74%,#03170d_100%)]" />
 
           <div className="relative z-10 mx-auto flex min-h-[92vh] w-full max-w-7xl flex-col justify-between px-5 py-8 sm:px-8 lg:px-0">
             <div className="flex items-center justify-between gap-4">
@@ -572,8 +560,7 @@ export default function CargaVivaPresentationPage() {
               <div className="relative">
                 <div
                   aria-hidden="true"
-                  className="absolute bottom-8 top-8 w-px bg-gradient-to-b from-[#CA6702] via-white/18 to-[#CA6702] sm:left-1/2 sm:-translate-x-1/2"
-                  style={{ left: "1.65rem" }}
+                  className="absolute bottom-8 left-[1.65rem] top-8 w-px bg-gradient-to-b from-[#CA6702] via-white/18 to-[#CA6702] sm:left-1/2 sm:-translate-x-1/2"
                 />
 
                 {flow.map((item, index) => {
@@ -625,8 +612,7 @@ export default function CargaVivaPresentationPage() {
                       {index < flow.length - 1 ? (
                         <div
                           aria-hidden="true"
-                          className="absolute z-10 h-3 w-3 rotate-45 border-b-2 border-r-2 border-[#CA6702] sm:left-1/2 sm:top-auto sm:bottom-3 sm:-translate-x-1/2"
-                          style={{ left: "1.15rem", top: "4.65rem" }}
+                          className="absolute left-[1.15rem] top-[4.65rem] z-10 h-3 w-3 rotate-45 border-b-2 border-r-2 border-[#CA6702] sm:left-1/2 sm:top-auto sm:bottom-3 sm:-translate-x-1/2"
                         />
                       ) : null}
                     </div>

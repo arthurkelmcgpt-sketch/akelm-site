@@ -22,10 +22,16 @@ export default function About() {
       <div className="absolute inset-0 bg-[#111827]/80"></div>
 
       {/* Glow esquerdo */}
-      <div className="absolute w-[700px] h-[700px] bg-[#7F1D1D] opacity-20 blur-3xl rounded-full top-[-200px] left-[-200px]" />
+      <div
+        className="absolute h-[700px] w-[700px] rounded-full bg-[#7F1D1D] opacity-20 blur-3xl"
+        style={{ left: "-200px", top: "-200px" }}
+      />
 
       {/* Glow direito */}
-      <div className="absolute w-[700px] h-[700px] bg-[#EF4444] opacity-20 blur-3xl rounded-full bottom-[-200px] right-[-200px]" />
+      <div
+        className="absolute h-[700px] w-[700px] rounded-full bg-[#EF4444] opacity-20 blur-3xl"
+        style={{ bottom: "-200px", right: "-200px" }}
+      />
 
       {/* Conteúdo */}
       <div className="relative max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center text-white">

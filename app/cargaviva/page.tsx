@@ -136,7 +136,11 @@ export default function CargaVivaPage() {
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(2,10,6,0.18)_0%,rgba(2,10,6,0.32)_100%)]"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(180deg, rgba(2,10,6,0.18) 0%, rgba(2,10,6,0.32) 100%)",
+          }}
         />
 
         <section className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 sm:px-6 sm:pb-16">
@@ -281,6 +285,13 @@ export default function CargaVivaPage() {
                   href="/cargaviva/termosdeuso"
                 >
                   Ver termos de uso
+                </Link>
+
+                <Link
+                  className="inline-flex items-center justify-center rounded-full border border-[#1B4332]/12 bg-white px-5 py-3 text-sm font-semibold text-[#1B4332] transition hover:border-[#1B4332]/25 hover:bg-[#f8fbf8]"
+                  href="/cargaviva/politicadeprivacidade"
+                >
+                  Ver política de privacidade
                 </Link>
 
                 <div className="group relative">

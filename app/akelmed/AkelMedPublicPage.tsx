@@ -479,8 +479,20 @@ export default function AkelMedPublicPage() {
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-slate-950/30" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),rgba(255,255,255,0.02)_36%,rgba(15,23,42,0.16)_72%,rgba(15,23,42,0.34))]" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.08)_0%,rgba(15,23,42,0.24)_55%,rgba(15,23,42,0.42)_100%)]" />
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at top, rgba(255,255,255,0.08), rgba(255,255,255,0.02) 36%, rgba(15,23,42,0.16) 72%, rgba(15,23,42,0.34))",
+            }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "linear-gradient(180deg, rgba(15,23,42,0.08) 0%, rgba(15,23,42,0.24) 55%, rgba(15,23,42,0.42) 100%)",
+            }}
+          />
         </div>
 
         <section className="relative z-10 mx-auto w-full max-w-7xl px-3 pb-10 pt-20 sm:px-6 sm:pb-16 sm:pt-24 lg:pb-20">

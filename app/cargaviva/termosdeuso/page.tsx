@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
-import ScrollMotion from "@/components/ScrollMotion/ScrollMotion";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.akelm.com.br";
 const pageBackground = "/images/cargaviva/bkgd-cargaviva.png";
@@ -180,7 +179,6 @@ export default function CargaVivaTermsPage() {
   return (
     <>
       <Navbar variant="light" />
-      <ScrollMotion />
 
       <script
         type="application/ld+json"
@@ -200,14 +198,15 @@ export default function CargaVivaTermsPage() {
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(2,10,6,0.18)_0%,rgba(2,10,6,0.34)_100%)]"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(180deg, rgba(2,10,6,0.18) 0%, rgba(2,10,6,0.34) 100%)",
+          }}
         />
 
         <section className="relative z-10 mx-auto w-full max-w-5xl px-4 pb-12 sm:px-6 sm:pb-16">
-          <div
-            className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/90 shadow-[0_28px_80px_rgba(2,10,6,0.26)] backdrop-blur"
-            data-reveal
-          >
+          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/90 shadow-[0_28px_80px_rgba(2,10,6,0.26)] backdrop-blur">
             <div className="border-b border-[#e7e2d7] px-5 py-8 sm:px-8 sm:py-10">
               <span className="inline-flex items-center rounded-full border border-[#1B4332]/12 bg-[#1B4332]/8 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-[#1B4332]">
                 CargaViva Fretes
@@ -234,6 +233,13 @@ export default function CargaVivaTermsPage() {
                   Voltar para CargaViva
                 </Link>
 
+                <Link
+                  href="/cargaviva/politicadeprivacidade"
+                  className="inline-flex items-center justify-center rounded-full border border-[#d7d1c2] bg-[#fffdf8] px-5 py-3 text-sm font-semibold text-[#163126] transition hover:border-[#CA6702]/30 hover:bg-[#fff7ed]"
+                >
+                  Ver política de privacidade
+                </Link>
+
                 <a
                   href="https://wa.me/5555999171727"
                   target="_blank"
@@ -251,8 +257,6 @@ export default function CargaVivaTermsPage() {
                   <article
                     key={section.title}
                     className="rounded-[1.5rem] border border-[#e6e0d4] bg-[#fffdfa] p-5 shadow-[0_14px_40px_rgba(27,67,50,0.04)] sm:p-6"
-                    data-reveal
-                    data-reveal-delay={index * 30 + 40}
                   >
                     <h2 className="text-xl font-semibold tracking-tight text-[#163126] sm:text-2xl">
                       {section.title}

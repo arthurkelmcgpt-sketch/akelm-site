@@ -19,8 +19,14 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[#111827]/80"></div>
 
       {/* Background glow */}
-      <div className="absolute w-[700px] h-[700px] bg-[#7F1D1D] opacity-20 blur-3xl rounded-full top-[-150px] left-[-250px]" />
-      <div className="absolute w-[700px] h-[700px] bg-[#EF4444] opacity-20 blur-3xl rounded-full bottom-[-250px] right-[-250px]" />
+      <div
+        className="absolute h-[700px] w-[700px] rounded-full bg-[#7F1D1D] opacity-20 blur-3xl"
+        style={{ left: "-250px", top: "-150px" }}
+      />
+      <div
+        className="absolute h-[700px] w-[700px] rounded-full bg-[#EF4444] opacity-20 blur-3xl"
+        style={{ bottom: "-250px", right: "-250px" }}
+      />
 
       {/* Content */}
       <div

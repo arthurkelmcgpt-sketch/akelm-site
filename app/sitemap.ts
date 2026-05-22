@@ -24,6 +24,11 @@ const routes = [
     url: `${siteUrl}/cargaviva/termosdeuso`,
   },
   {
+    changeFrequency: "yearly",
+    priority: 0.5,
+    url: `${siteUrl}/cargaviva/politicadeprivacidade`,
+  },
+  {
     changeFrequency: "monthly",
     priority: 0.8,
     url: `${siteUrl}/akelmed/funcionalidades`,
