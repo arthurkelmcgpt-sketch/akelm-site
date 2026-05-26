@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import Footer from "@/components/Footer/Footer";
@@ -263,22 +264,51 @@ export default function CargaVivaPage() {
                   <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-[#9f5304]">
                     Baixe o aplicativo:
                   </p>
-                  <a
-                    className="mt-3 inline-flex w-full items-center justify-center gap-3 rounded-[1.15rem] bg-gradient-to-r from-[#1B4332] to-[#2d6a4f] px-6 py-4 text-left text-white shadow-[0_22px_45px_rgba(27,67,50,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_28px_55px_rgba(27,67,50,0.4)]"
-                    href="https://play.google.com/store/apps/details?id=br.com.akelm.cargavivafretes"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    <span className="h-0 w-0 border-y-[10px] border-l-[16px] border-y-transparent border-l-white/85" />
-                    <span className="leading-none">
-                      <span className="block text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-white/75">
-                        Disponível no
+                  <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                    <a
+                      className="inline-flex min-h-[78px] items-center justify-center gap-3 rounded-[1.15rem] bg-gradient-to-r from-[#1B4332] to-[#2d6a4f] px-6 py-4 text-left text-white shadow-[0_22px_45px_rgba(27,67,50,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_28px_55px_rgba(27,67,50,0.4)]"
+                      href="https://play.google.com/store/apps/details?id=br.com.akelm.cargavivafretes"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <Image
+                        src="/images/cargaviva/google-play-icon.png"
+                        alt="Google Play"
+                        width={28}
+                        height={28}
+                        className="h-7 w-7 object-contain"
+                      />
+                      <span className="leading-none">
+                        <span className="block text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-white/75">
+                          Celular
+                        </span>
+                        <span className="mt-1 block text-base font-semibold sm:text-lg">
+                          Google Play
+                        </span>
                       </span>
-                      <span className="mt-1 block text-base font-semibold sm:text-lg">
-                        Google Play
+                    </a>
+
+                    <Link
+                      className="inline-flex min-h-[78px] items-center justify-center gap-3 rounded-[1.15rem] bg-gradient-to-r from-[#CA6702] to-[#ee9b00] px-6 py-4 text-left text-white shadow-[0_22px_45px_rgba(202,103,2,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_28px_55px_rgba(202,103,2,0.36)]"
+                      href="/cargaviva/download/desktop"
+                    >
+                      <Image
+                        src="/images/cargaviva/desktop-icon.png"
+                        alt="Windows desktop"
+                        width={30}
+                        height={30}
+                        className="h-8 w-8 object-contain"
+                      />
+                      <span className="leading-none">
+                        <span className="block text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-white/80">
+                          Desktop
+                        </span>
+                        <span className="mt-1 block text-base font-semibold sm:text-lg">
+                          Windows
+                        </span>
                       </span>
-                    </span>
-                  </a>
+                    </Link>
+                  </div>
                 </div>
 
                 <div className="mt-4 flex flex-wrap gap-3">

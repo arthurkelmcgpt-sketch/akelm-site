@@ -30,6 +30,11 @@ const routes = [
   },
   {
     changeFrequency: "monthly",
+    priority: 0.7,
+    url: `${siteUrl}/cargaviva/download/desktop`,
+  },
+  {
+    changeFrequency: "monthly",
     priority: 0.8,
     url: `${siteUrl}/akelmed/funcionalidades`,
   },
