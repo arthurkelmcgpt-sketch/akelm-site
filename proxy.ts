@@ -8,6 +8,10 @@ export function proxy(request: NextRequest) {
     return NextResponse.rewrite(new URL("/cargaviva/apresentacao", request.url));
   }
 
+  if (decodedPathname === "/cargaviva/escritório") {
+    return NextResponse.rewrite(new URL("/cargaviva/escritorio", request.url));
+  }
+
   return NextResponse.next();
 }
 

@@ -35,6 +35,11 @@ const routes = [
   },
   {
     changeFrequency: "monthly",
+    priority: 0.6,
+    url: `${siteUrl}/cargaviva/testeinterativo`,
+  },
+  {
+    changeFrequency: "monthly",
     priority: 0.8,
     url: `${siteUrl}/akelmed/funcionalidades`,
   },

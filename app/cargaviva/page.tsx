@@ -341,6 +341,13 @@ export default function CargaVivaPage() {
                   >
                     Ver política de privacidade
                   </Link>
+
+                  <Link
+                    className="inline-flex items-center justify-center rounded-full border border-[#1B4332]/12 bg-white px-5 py-3 text-sm font-semibold text-[#1B4332] transition hover:border-[#1B4332]/25 hover:bg-[#f8fbf8]"
+                    href="/cargaviva/testeinterativo"
+                  >
+                    Fazer teste interativo
+                  </Link>
                 </div>
               </div>
             </div>
