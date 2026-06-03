@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Montserrat, Oswald } from "next/font/google";
 import {
   Banknote,
   BarChart3,
@@ -30,7 +31,20 @@ import {
   Users,
 } from "lucide-react";
 
+import Navbar from "@/components/Navbar/Navbar";
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.akelm.com.br";
+const pageBackground = "/images/cargaviva/bkgd-cargaviva.png";
+
+const headingFont = Oswald({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
+
+const bodyFont = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 const audience = [
   {
@@ -343,15 +357,19 @@ export const metadata: Metadata = {
 export default function CargaVivaPresentationPage() {
   return (
     <>
+      <Navbar variant="hero" />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <main className="min-h-screen bg-[#F8F9FA] text-[#1B4332]">
-        <section className="relative isolate min-h-[92vh] overflow-hidden bg-[#03170d] text-white">
+      <main
+        className={`${bodyFont.className} min-h-screen overflow-hidden bg-[#061b10] text-[#062018]`}
+      >
+        <section className="relative isolate flex min-h-screen items-end overflow-hidden bg-[#03170d] px-6 pb-20 pt-28 text-white">
           <Image
-            src="/images/cargaviva/cargaviva-capa.png"
+            src={pageBackground}
             alt="CargaViva Fretes"
             fill
             priority
@@ -374,7 +392,10 @@ export default function CargaVivaPresentationPage() {
             }}
           />
 
-          <div className="relative z-10 mx-auto flex min-h-[92vh] w-full max-w-7xl flex-col justify-between px-5 py-8 sm:px-8 lg:px-0">
+          <div className="absolute right-[8%] top-[18%] hidden h-44 w-44 rounded-full border border-[#ca6702]/30 bg-[#ca6702]/10 blur-[1px] cargaviva-presentation-orbit lg:block" />
+          <div className="absolute bottom-[18%] right-[12%] hidden h-28 w-28 border border-white/10 bg-white/5 backdrop-blur cargaviva-presentation-float-slow lg:block" />
+
+          <div className="relative z-10 mx-auto flex min-h-[72vh] w-full max-w-7xl flex-col justify-between px-0 py-0 lg:px-0">
             <div className="flex items-center justify-between gap-4">
               <Image
                 src="/images/cargaviva/logo-horizontal-light.png"
@@ -382,27 +403,27 @@ export default function CargaVivaPresentationPage() {
                 width={210}
                 height={74}
                 priority
-                className="h-auto w-44 sm:w-56"
+                className="h-auto w-44 sm:w-56 cargaviva-presentation-float"
               />
-              <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white/82 backdrop-blur">
+              <span className="border border-white/15 bg-white/10 px-4 py-2 text-[0.68rem] font-extrabold uppercase tracking-[0.24em] text-white/82 backdrop-blur">
                 Apresentação comercial
               </span>
             </div>
 
-            <div className="ml-auto max-w-3xl rounded-[1.35rem] border border-white/10 bg-[#03170d]/58 p-5 pb-6 pt-5 text-left shadow-[0_28px_80px_rgba(0,0,0,0.2)] backdrop-blur-[2px] sm:p-7 lg:mb-8 lg:max-w-[720px] lg:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#f6a63a]">
+            <div className="ml-auto max-w-4xl border-l-4 border-[#ca6702] bg-[#03170d]/48 p-6 pb-7 pt-6 text-left shadow-[0_28px_80px_rgba(0,0,0,0.2)] backdrop-blur-[2px] sm:p-8 lg:mb-0 lg:max-w-[820px] lg:p-10 cargaviva-presentation-sheen">
+              <p className="text-xs font-extrabold uppercase tracking-[0.34em] text-[#ca6702]">
                 Apresentação APP CargaViva Fretes
               </p>
-              <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-6xl lg:text-[4.8rem] lg:leading-[0.96]">
+              <h1 className={`${headingFont.className} mt-5 text-5xl font-bold uppercase leading-[0.88] tracking-[-0.055em] text-white sm:text-7xl lg:text-[6rem]`}>
                 Segurança, transparência e praticidade para o transporte de animais.
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-white/84 sm:text-lg">
+              <p className="mt-6 max-w-2xl text-base font-medium leading-8 text-white/84 sm:text-lg">
                 O CargaViva Fretes é uma plataforma digital especializada que
                 atua como intermediária, conectando clientes que necessitam de
                 transporte de animais a motoristas de caminhão autônomos que
                 oferecem este serviço.
               </p>
-              <p className="mt-4 max-w-2xl text-base leading-8 text-white/78 sm:text-lg">
+              <p className="mt-4 max-w-2xl text-base font-medium leading-8 text-white/78 sm:text-lg">
                 O objetivo é trazer mais segurança, transparência e praticidade
                 para a demanda de um nicho muito importante sobretudo para a
                 nossa região, que é a pecuária.
@@ -411,7 +432,7 @@ export default function CargaVivaPresentationPage() {
           </div>
         </section>
 
-        <section className="bg-[#03170d] px-5 pb-8 sm:px-8 lg:px-10">
+        <section className="bg-[#03170d] px-6 pb-10 sm:px-8 lg:px-10">
           <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-3">
             {[
               ["Especialização", "Transporte de animais"],
@@ -420,7 +441,7 @@ export default function CargaVivaPresentationPage() {
             ].map(([label, value]) => (
               <div
                 key={label}
-                className="rounded-[1.25rem] border border-white/10 bg-white/8 p-5 text-white shadow-[0_22px_55px_rgba(0,0,0,0.18)] backdrop-blur"
+                className="cargaviva-presentation-sheen border border-white/10 bg-white/8 p-5 text-white shadow-[0_22px_55px_rgba(0,0,0,0.18)] backdrop-blur transition hover:-translate-y-1 hover:border-[#ca6702]/55 hover:bg-[#ca6702]/18"
               >
                 <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-[#f6a63a]">
                   {label}
@@ -433,13 +454,13 @@ export default function CargaVivaPresentationPage() {
           </div>
         </section>
 
-        <section className="px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
+        <section className="bg-[#f5efe2] px-6 py-20 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#CA6702]">
                 Para quem é?
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#1B4332] sm:text-5xl">
+              <h2 className={`${headingFont.className} mt-3 text-5xl font-bold uppercase leading-none tracking-[-0.04em] text-[#1B4332] sm:text-6xl`}>
                 Dois públicos conectados por uma operação mais simples.
               </h2>
             </div>
@@ -451,9 +472,9 @@ export default function CargaVivaPresentationPage() {
                 return (
                   <article
                     key={item.title}
-                    className="rounded-[1.5rem] border border-[#dde5df] bg-white p-6 shadow-[0_22px_60px_rgba(27,67,50,0.08)] sm:p-8"
+                    className="border border-[#dde5df] bg-white p-7 shadow-[0_22px_60px_rgba(27,67,50,0.08)] transition hover:-translate-y-1 hover:border-[#ca6702]/40 hover:shadow-[0_28px_70px_rgba(27,67,50,0.12)] sm:p-8"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#1B4332] text-white">
+                    <div className="flex h-12 w-12 items-center justify-center bg-[#1B4332] text-white">
                       <Icon className="h-6 w-6" />
                     </div>
                     <h3 className="mt-5 text-2xl font-semibold tracking-tight text-[#1B4332]">
@@ -469,14 +490,14 @@ export default function CargaVivaPresentationPage() {
           </div>
         </section>
 
-        <section className="bg-[#102f23] px-5 py-14 text-white sm:px-8 sm:py-20 lg:px-10">
+        <section className="bg-[#102f23] px-6 py-24 text-white sm:px-8 lg:px-10">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
               <div className="lg:sticky lg:top-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#f6a63a]">
                   Como funciona?
                 </p>
-                <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-5xl">
+                <h2 className={`${headingFont.className} mt-3 text-5xl font-bold uppercase leading-none tracking-[-0.04em] sm:text-6xl`}>
                   Uma experiência completa e totalmente rastreável.
                 </h2>
                 <p className="mt-5 text-base leading-8 text-white/76">
@@ -485,9 +506,9 @@ export default function CargaVivaPresentationPage() {
                   valor ao motorista.
                 </p>
 
-                <div className="mt-8 rounded-[1.5rem] border border-white/10 bg-white/8 p-5 shadow-[0_22px_55px_rgba(0,0,0,0.14)] backdrop-blur sm:p-6">
+                <div className="mt-8 border border-white/10 bg-white/8 p-6 shadow-[0_22px_55px_rgba(0,0,0,0.14)] backdrop-blur cargaviva-presentation-sheen">
                   <div className="flex items-center gap-3">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#CA6702] text-white">
+                    <span className="flex h-11 w-11 items-center justify-center bg-[#CA6702] text-white">
                       <History className="h-5 w-5" />
                     </span>
                     <div>
@@ -504,7 +525,7 @@ export default function CargaVivaPresentationPage() {
                     {differentials.map((item) => (
                       <article
                         key={item.title}
-                        className="rounded-[1rem] border border-white/10 bg-[#03170d]/34 p-4"
+                        className="border border-white/10 bg-[#03170d]/34 p-4 transition hover:-translate-y-1 hover:border-[#ca6702]/50"
                       >
                         <h4 className="text-sm font-semibold leading-6 text-white">
                           {item.title}
@@ -517,9 +538,9 @@ export default function CargaVivaPresentationPage() {
                   </div>
                 </div>
 
-                <div className="mt-5 rounded-[1.5rem] border border-[#CA6702]/35 bg-[#CA6702]/12 p-5 shadow-[0_22px_55px_rgba(0,0,0,0.14)] backdrop-blur sm:p-6">
+                <div className="mt-5 border border-[#CA6702]/35 bg-[#CA6702]/12 p-6 shadow-[0_22px_55px_rgba(0,0,0,0.14)] backdrop-blur cargaviva-presentation-sheen">
                   <div className="flex items-center gap-3">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#CA6702] text-white">
+                    <span className="flex h-11 w-11 items-center justify-center bg-[#CA6702] text-white">
                       <ShieldCheck className="h-5 w-5" />
                     </span>
                     <div>
@@ -547,10 +568,10 @@ export default function CargaVivaPresentationPage() {
                       return (
                         <article
                           key={feature.title}
-                          className="rounded-[1rem] border border-white/10 bg-[#03170d]/42 p-4"
+                          className="border border-white/10 bg-[#03170d]/42 p-4 transition hover:-translate-y-1 hover:border-[#ca6702]/50"
                         >
                           <div className="flex items-start gap-3">
-                            <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#f6a63a]">
+                            <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center bg-white/10 text-[#f6a63a]">
                               <Icon className="h-4 w-4" />
                             </span>
                             <div>
@@ -572,8 +593,7 @@ export default function CargaVivaPresentationPage() {
               <div className="relative">
                 <div
                   aria-hidden="true"
-                  className="absolute bottom-8 top-8 w-px bg-gradient-to-b from-[#CA6702] via-white/18 to-[#CA6702] sm:left-1/2 sm:-translate-x-1/2"
-                  style={{ left: "1.65rem" }}
+                  className="absolute bottom-8 left-7 top-8 w-px bg-gradient-to-b from-[#CA6702] via-white/18 to-[#CA6702] sm:left-1/2 sm:-translate-x-1/2"
                 />
 
                 {flow.map((item, index) => {
@@ -584,13 +604,13 @@ export default function CargaVivaPresentationPage() {
                     <div
                       key={item.title}
                       className={[
-                        "relative grid gap-4 pb-8 last:pb-0 sm:grid-cols-[1fr_auto_1fr] sm:items-center",
+                        "relative grid gap-4 pb-8 last:pb-0 sm:grid-cols-[1fr_3.5rem_1fr] sm:items-center",
                         isLeft ? "" : "sm:[&>article]:col-start-3",
                       ].join(" ")}
                     >
                       <article
                         className={[
-                          "relative ml-16 rounded-[1.35rem] border border-white/10 bg-white/9 p-5 shadow-[0_22px_55px_rgba(0,0,0,0.16)] backdrop-blur sm:ml-0 sm:p-6",
+                          "relative ml-16 border border-white/10 bg-white/9 p-5 shadow-[0_22px_55px_rgba(0,0,0,0.16)] backdrop-blur transition hover:-translate-y-1 hover:border-[#ca6702]/50 hover:bg-white/12 sm:ml-0 sm:p-6",
                           isLeft ? "sm:text-right" : "sm:text-left",
                         ].join(" ")}
                       >
@@ -603,7 +623,7 @@ export default function CargaVivaPresentationPage() {
                           <span className="text-sm font-semibold text-white/42">
                             {String(index + 1).padStart(2, "0")}
                           </span>
-                          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#CA6702] text-white">
+                          <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-[#CA6702] text-white">
                             <Icon className="h-5 w-5" />
                           </span>
                         </div>
@@ -616,7 +636,7 @@ export default function CargaVivaPresentationPage() {
                         </p>
                       </article>
 
-                      <div className="absolute left-0 top-5 z-10 flex h-14 w-14 items-center justify-center rounded-full border border-[#CA6702]/45 bg-[#102f23] text-white shadow-[0_16px_38px_rgba(0,0,0,0.22)] sm:static sm:col-start-2 sm:row-start-1">
+                      <div className="absolute left-0 top-5 z-10 flex h-14 w-14 items-center justify-center rounded-full border border-[#CA6702]/45 bg-[#102f23] text-white shadow-[0_16px_38px_rgba(0,0,0,0.22)] sm:static sm:col-start-2 sm:row-start-1 sm:mx-auto">
                         <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#CA6702]">
                           <Icon className="h-5 w-5" />
                         </span>
@@ -625,8 +645,7 @@ export default function CargaVivaPresentationPage() {
                       {index < flow.length - 1 ? (
                         <div
                           aria-hidden="true"
-                          className="absolute z-10 h-3 w-3 rotate-45 border-b-2 border-r-2 border-[#CA6702] sm:left-1/2 sm:top-auto sm:bottom-3 sm:-translate-x-1/2"
-                          style={{ left: "1.15rem", top: "4.65rem" }}
+                          className="absolute left-5 top-[4.65rem] z-10 h-3 w-3 rotate-45 border-b-2 border-r-2 border-[#CA6702] sm:bottom-3 sm:left-1/2 sm:top-auto sm:-translate-x-1/2"
                         />
                       ) : null}
                     </div>
@@ -637,14 +656,14 @@ export default function CargaVivaPresentationPage() {
           </div>
         </section>
 
-        <section className="overflow-hidden bg-[#f1f4f0] px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
+        <section className="overflow-hidden bg-[#f5efe2] px-6 py-24 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#CA6702]">
                   O mercado
                 </p>
-                <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#1B4332] sm:text-5xl">
+                <h2 className={`${headingFont.className} mt-3 text-5xl font-bold uppercase leading-none tracking-[-0.04em] text-[#1B4332] sm:text-6xl`}>
                   Um nicho regional grande, ativo e ainda pouco digitalizado.
                 </h2>
                 <div className="mt-5 grid gap-4 text-base leading-8 text-[#495057]">
@@ -666,7 +685,7 @@ export default function CargaVivaPresentationPage() {
                   {marketStats.map((stat) => (
                     <article
                       key={stat.label}
-                      className="rounded-[1.25rem] border border-[#d8e0da] bg-white p-5 shadow-[0_18px_45px_rgba(27,67,50,0.07)]"
+                      className="border border-[#d8e0da] bg-white p-5 shadow-[0_18px_45px_rgba(27,67,50,0.07)] transition hover:-translate-y-1 hover:border-[#ca6702]/40 hover:shadow-[0_26px_60px_rgba(27,67,50,0.1)]"
                     >
                       <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#CA6702]">
                         {stat.label}
@@ -682,7 +701,7 @@ export default function CargaVivaPresentationPage() {
                 </div>
               </div>
 
-              <div className="rounded-[1.75rem] border border-[#d8e0da] bg-white p-4 shadow-[0_24px_70px_rgba(27,67,50,0.08)] sm:p-6">
+              <div className="border border-[#d8e0da] bg-white p-4 shadow-[0_24px_70px_rgba(27,67,50,0.08)] sm:p-6">
                 <div className="flex flex-col gap-4 border-b border-[#e3e8e4] pb-5 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-[#CA6702]">
@@ -692,12 +711,12 @@ export default function CargaVivaPresentationPage() {
                       Rebanhos por praça
                     </h3>
                   </div>
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#1B4332] text-white">
+                  <span className="inline-flex h-12 w-12 items-center justify-center bg-[#1B4332] text-white">
                     <MapPin className="h-6 w-6" />
                   </span>
                 </div>
 
-                <div className="mt-5 overflow-hidden rounded-[1.15rem] border border-[#e3e8e4]">
+                <div className="mt-5 overflow-hidden border border-[#e3e8e4]">
                   <div className="grid grid-cols-[1.28fr_0.8fr_0.8fr_0.8fr] bg-[#1B4332] px-4 py-3 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-white/72 sm:text-xs">
                     <span>Município</span>
                     <span className="text-right">Bovinos</span>
@@ -721,9 +740,9 @@ export default function CargaVivaPresentationPage() {
                 </div>
 
                 <div className="mt-5 grid gap-4 lg:grid-cols-2">
-                  <article className="rounded-[1.15rem] border border-[#d8e0da] bg-[#f8faf8] p-4">
+                  <article className="border border-[#d8e0da] bg-[#f8faf8] p-4 transition hover:-translate-y-1 hover:border-[#ca6702]/40">
                     <div className="flex items-center gap-3">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#CA6702] text-white">
+                      <span className="flex h-10 w-10 items-center justify-center bg-[#CA6702] text-white">
                         <BarChart3 className="h-5 w-5" />
                       </span>
                       <h4 className="text-base font-semibold text-[#1B4332]">
@@ -738,9 +757,9 @@ export default function CargaVivaPresentationPage() {
                     </p>
                   </article>
 
-                  <article className="rounded-[1.15rem] border border-[#d8e0da] bg-[#f8faf8] p-4">
+                  <article className="border border-[#d8e0da] bg-[#f8faf8] p-4 transition hover:-translate-y-1 hover:border-[#ca6702]/40">
                     <div className="flex items-center gap-3">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#CA6702] text-white">
+                      <span className="flex h-10 w-10 items-center justify-center bg-[#CA6702] text-white">
                         <TrendingUp className="h-5 w-5" />
                       </span>
                       <h4 className="text-base font-semibold text-[#1B4332]">
@@ -758,7 +777,7 @@ export default function CargaVivaPresentationPage() {
               </div>
             </div>
 
-            <div className="mt-6 rounded-[1.5rem] border border-[#d8e0da] bg-[#1B4332] p-6 text-white shadow-[0_24px_70px_rgba(27,67,50,0.16)] sm:p-8">
+            <div className="mt-6 border border-[#d8e0da] bg-[#1B4332] p-8 text-white shadow-[0_24px_70px_rgba(27,67,50,0.16)] cargaviva-presentation-sheen">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#f6a63a]">
                 Tese de oportunidade
               </p>
@@ -774,14 +793,14 @@ export default function CargaVivaPresentationPage() {
           </div>
         </section>
 
-        <section className="bg-[#fffdfa] px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
+        <section className="bg-white px-6 py-24 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">
               <div className="lg:sticky lg:top-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#CA6702]">
                   Marketing
                 </p>
-                <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#1B4332] sm:text-5xl">
+                <h2 className={`${headingFont.className} mt-3 text-5xl font-bold uppercase leading-none tracking-[-0.04em] text-[#1B4332] sm:text-6xl`}>
                   Comunicação pensada para a realidade do meio rural.
                 </h2>
                 <p className="mt-5 text-base leading-8 text-[#495057]">
@@ -791,9 +810,9 @@ export default function CargaVivaPresentationPage() {
                   informa, negocia e constrói confiança.
                 </p>
 
-                <div className="mt-8 rounded-[1.5rem] border border-[#d8e0da] bg-[#1B4332] p-6 text-white shadow-[0_22px_60px_rgba(27,67,50,0.14)]">
+                <div className="mt-8 border border-[#d8e0da] bg-[#1B4332] p-6 text-white shadow-[0_22px_60px_rgba(27,67,50,0.14)] cargaviva-presentation-sheen">
                   <div className="flex items-center gap-3">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#CA6702]">
+                    <span className="flex h-12 w-12 items-center justify-center bg-[#CA6702]">
                       <Mic2 className="h-6 w-6" />
                     </span>
                     <div>
@@ -821,10 +840,10 @@ export default function CargaVivaPresentationPage() {
                   return (
                     <article
                       key={channel.title}
-                      className="grid gap-4 rounded-[1.35rem] border border-[#d8e0da] bg-white p-5 shadow-[0_20px_55px_rgba(27,67,50,0.07)] sm:grid-cols-[auto_1fr] sm:p-6"
+                      className="grid gap-4 border border-[#d8e0da] bg-white p-5 shadow-[0_20px_55px_rgba(27,67,50,0.07)] transition hover:-translate-y-1 hover:border-[#ca6702]/40 hover:shadow-[0_28px_70px_rgba(27,67,50,0.1)] sm:grid-cols-[auto_1fr] sm:p-6"
                     >
                       <div className="flex items-start gap-3">
-                        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#f7eadc] text-[#CA6702]">
+                        <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#f7eadc] text-[#CA6702]">
                           <Icon className="h-6 w-6" />
                         </span>
                         <span className="pt-2 text-sm font-semibold text-[#1B4332]/34">
@@ -838,7 +857,7 @@ export default function CargaVivaPresentationPage() {
                         <p className="mt-3 text-sm leading-7 text-[#495057] sm:text-base">
                           {channel.description}
                         </p>
-                        <p className="mt-4 rounded-[1rem] border border-[#f0dec9] bg-[#fff7ed] px-4 py-3 text-sm font-medium leading-6 text-[#8a4a05]">
+                        <p className="mt-4 border-l-4 border-[#CA6702] bg-[#fff7ed] px-4 py-3 text-sm font-medium leading-6 text-[#8a4a05]">
                           {channel.highlight}
                         </p>
                       </div>
@@ -850,14 +869,14 @@ export default function CargaVivaPresentationPage() {
           </div>
         </section>
 
-        <section className="bg-[#03170d] px-5 py-14 text-white sm:px-8 sm:py-20 lg:px-10">
+        <section className="bg-[#03170d] px-6 py-24 text-white sm:px-8 lg:px-10">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
               <div className="lg:sticky lg:top-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#f6a63a]">
                   Conclusão
                 </p>
-                <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-5xl">
+                <h2 className={`${headingFont.className} mt-3 text-5xl font-bold uppercase leading-none tracking-[-0.04em] sm:text-6xl`}>
                   Por que apoiar o CargaViva?
                 </h2>
                 <p className="mt-5 text-base leading-8 text-white/76">
@@ -867,9 +886,9 @@ export default function CargaVivaPresentationPage() {
                   eficiência no transporte de rebanhos.
                 </p>
 
-                <div className="mt-8 rounded-[1.5rem] border border-white/10 bg-white/8 p-6 shadow-[0_24px_70px_rgba(0,0,0,0.18)] backdrop-blur">
+                <div className="mt-8 border border-white/10 bg-white/8 p-6 shadow-[0_24px_70px_rgba(0,0,0,0.18)] backdrop-blur cargaviva-presentation-sheen">
                   <div className="flex items-center gap-3">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#CA6702] text-white">
+                    <span className="flex h-12 w-12 items-center justify-center bg-[#CA6702] text-white">
                       <Route className="h-6 w-6" />
                     </span>
                     <div>
@@ -893,10 +912,10 @@ export default function CargaVivaPresentationPage() {
                 {supportReasons.map((reason, index) => (
                   <article
                     key={reason.title}
-                    className="rounded-[1.35rem] border border-white/10 bg-white/8 p-5 shadow-[0_22px_55px_rgba(0,0,0,0.16)] backdrop-blur sm:p-6"
+                    className="border border-white/10 bg-white/8 p-5 shadow-[0_22px_55px_rgba(0,0,0,0.16)] backdrop-blur transition hover:-translate-y-1 hover:border-[#ca6702]/50 hover:bg-white/12 sm:p-6"
                   >
                     <div className="flex items-start gap-4">
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#CA6702] text-white">
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-[#CA6702] text-white">
                         <CircleCheck className="h-5 w-5" />
                       </span>
                       <div>

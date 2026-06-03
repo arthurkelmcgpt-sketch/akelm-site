@@ -1,6 +1,6 @@
 ﻿import type { Metadata } from "next";
 
-import AkelMedPublicPage from "./AkelMedPublicPage";
+import AkelMedProductPage from "./AkelMedProductPage";
 
 export const metadata: Metadata = {
   title: "AkelMed | Sistema para clínicas e consultórios",
@@ -46,6 +46,6 @@ export const metadata: Metadata = {
 };
 
 export default function AkelMedPage() {
-  return <AkelMedPublicPage />;
+  return <AkelMedProductPage />;
 }
 

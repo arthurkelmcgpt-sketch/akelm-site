@@ -28,6 +28,86 @@ body {
   color: var(--akelmed-text);
 }
 
+@keyframes akelm-marquee-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-33.333%, 0, 0);
+  }
+}
+
+.cargaviva-presentation-orbit {
+  animation: cargaviva-presentation-orbit 14s ease-in-out infinite;
+}
+
+.cargaviva-presentation-float {
+  animation: cargaviva-presentation-float 7s ease-in-out infinite;
+}
+
+.cargaviva-presentation-float-slow {
+  animation: cargaviva-presentation-float 10s ease-in-out infinite;
+}
+
+.cargaviva-presentation-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.cargaviva-presentation-sheen::after {
+  content: "";
+  position: absolute;
+  inset: -45% auto -45% -75%;
+  width: 42%;
+  transform: rotate(18deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+  animation: cargaviva-presentation-sheen 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes cargaviva-presentation-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -12px, 0);
+  }
+}
+
+@keyframes cargaviva-presentation-orbit {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(18px, -10px, 0) rotate(4deg);
+  }
+}
+
+@keyframes cargaviva-presentation-sheen {
+  0%,
+  55% {
+    left: -75%;
+  }
+
+  100% {
+    left: 130%;
+  }
+}
+
+.akelm-marquee-track {
+  animation: akelm-marquee-left 24s linear infinite;
+  will-change: transform;
+}
+
+.akelm-marquee:hover .akelm-marquee-track {
+  animation-play-state: paused;
+}
+
 .akelmed-page {
   position: relative;
   overflow: hidden;
@@ -660,6 +740,17 @@ body {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .akelm-marquee-track {
+    animation: none;
+  }
+
+  .cargaviva-presentation-orbit,
+  .cargaviva-presentation-float,
+  .cargaviva-presentation-float-slow,
+  .cargaviva-presentation-sheen::after {
+    animation: none;
   }
 
   html {

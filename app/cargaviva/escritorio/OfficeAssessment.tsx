@@ -3029,6 +3029,34 @@ export default function OfficeAssessment({
     setHistory([]);
   };
 
+  const panelClass = compact
+    ? "border border-[#d7c79f] bg-[#fffaf2] p-5 shadow-[0_22px_70px_rgba(8,40,28,0.14)] sm:p-6"
+    : "rounded-[1.5rem] border border-[#dde5df] bg-white p-5 shadow-[0_22px_60px_rgba(27,67,50,0.08)] sm:p-6";
+  const iconClass = compact
+    ? "flex h-11 w-11 shrink-0 items-center justify-center bg-[#1B4332] text-white"
+    : "flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#1B4332] text-white";
+  const inputClass = compact
+    ? "mt-2 w-full border border-[#d7c79f] bg-white px-4 py-3 text-sm text-[#163126] outline-none transition placeholder:text-[#9aa79f] focus:border-[#CA6702]"
+    : "mt-2 w-full rounded-2xl border border-[#d8e0da] bg-[#fffdfa] px-4 py-3 text-sm text-[#163126] outline-none transition placeholder:text-[#9aa79f] focus:border-[#CA6702]/70";
+  const primaryButtonClass = compact
+    ? "inline-flex items-center gap-2 bg-[#1B4332] px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#08281c] disabled:cursor-not-allowed disabled:bg-[#9aa79f]"
+    : "inline-flex items-center gap-2 rounded-full bg-[#1B4332] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#24533f] disabled:cursor-not-allowed disabled:bg-[#9aa79f]";
+  const secondaryButtonClass = compact
+    ? "inline-flex items-center gap-2 border border-[#d7c79f] bg-white px-5 py-3 text-sm font-bold text-[#163126] transition hover:-translate-y-0.5 hover:border-[#CA6702]/50 hover:bg-[#fff7ed]"
+    : "inline-flex items-center gap-2 rounded-full border border-[#d7d1c2] bg-[#fffdf8] px-5 py-3 text-sm font-semibold text-[#163126] transition hover:border-[#CA6702]/30 hover:bg-[#fff7ed]";
+  const answerButtonClass = compact
+    ? "border border-[#d7c79f] bg-white px-4 py-4 text-left transition hover:-translate-y-0.5 hover:border-[#CA6702] hover:bg-[#fff7ed] hover:shadow-[0_12px_30px_rgba(202,103,2,0.12)]"
+    : "rounded-[1rem] border border-[#d8e0da] bg-[#fffdfa] px-4 py-4 text-left transition hover:border-[#CA6702]/50 hover:bg-[#fff7ed]";
+  const previewBoxClass = compact
+    ? "mt-5 border border-[#d7c79f] bg-white p-4 text-sm leading-7 text-[#52625a] sm:text-base"
+    : "mt-5 rounded-[1rem] border border-[#d8e0da] bg-[#f8faf7] p-4 text-sm leading-7 text-[#52625a] sm:text-base";
+  const calloutClass = compact
+    ? "mt-5 border border-[#d7c79f] bg-[#f5efe2] p-5"
+    : "mt-5 rounded-[1.15rem] border border-[#eadbc5] bg-[#fffaf2] p-5";
+  const stepIconClass = compact
+    ? "mt-1 flex h-8 w-8 shrink-0 items-center justify-center bg-[#CA6702] text-white"
+    : "mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#CA6702] text-white";
+
   return (
     <section
       id="diagnostico"
@@ -3064,7 +3092,7 @@ export default function OfficeAssessment({
             </div>
           ) : null}
 
-          <div className="rounded-[1.5rem] border border-[#dde5df] bg-white p-5 shadow-[0_22px_60px_rgba(27,67,50,0.08)] sm:p-6">
+          <div className={panelClass}>
             {isContactStep ? (
               <form onSubmit={finishContactStep}>
                 <div className="flex items-start justify-between gap-4">
@@ -3072,7 +3100,13 @@ export default function OfficeAssessment({
                     <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#CA6702]">
                       Identificação do relatório
                     </p>
-                    <h3 className="mt-3 text-2xl font-semibold text-[#1B4332]">
+                    <h3
+                      className={
+                        compact
+                          ? "mt-3 text-3xl font-extrabold uppercase leading-none tracking-[-0.04em] text-[#1B4332]"
+                          : "mt-3 text-2xl font-semibold text-[#1B4332]"
+                      }
+                    >
                       Só falta identificar este diagnóstico.
                     </h3>
                     <p className="mt-3 max-w-2xl text-sm leading-6 text-[#52625a]">
@@ -3081,7 +3115,7 @@ export default function OfficeAssessment({
                       de contato comercial.
                     </p>
                   </div>
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#1B4332] text-white">
+                  <span className={iconClass}>
                     <FileText className="h-5 w-5" />
                   </span>
                 </div>
@@ -3102,7 +3136,7 @@ export default function OfficeAssessment({
                           ? "Ex.: Escritório São João"
                           : "Ex.: João da Silva"
                       }
-                      className="mt-2 w-full rounded-2xl border border-[#d8e0da] bg-[#fffdfa] px-4 py-3 text-sm text-[#163126] outline-none transition placeholder:text-[#9aa79f] focus:border-[#CA6702]/70"
+                      className={inputClass}
                     />
                   </label>
 
@@ -3121,7 +3155,7 @@ export default function OfficeAssessment({
                           )
                         }
                         placeholder="Ex.: (55) 99917-1727"
-                        className="mt-2 w-full rounded-2xl border border-[#d8e0da] bg-[#fffdfa] px-4 py-3 text-sm text-[#163126] outline-none transition placeholder:text-[#9aa79f] focus:border-[#CA6702]/70"
+                        className={inputClass}
                       />
                     </label>
 
@@ -3136,7 +3170,7 @@ export default function OfficeAssessment({
                           updateContactInfo("city", event.target.value)
                         }
                         placeholder="Ex.: Santa Maria"
-                        className="mt-2 w-full rounded-2xl border border-[#d8e0da] bg-[#fffdfa] px-4 py-3 text-sm text-[#163126] outline-none transition placeholder:text-[#9aa79f] focus:border-[#CA6702]/70"
+                        className={inputClass}
                       />
                     </label>
                   </div>
@@ -3146,13 +3180,13 @@ export default function OfficeAssessment({
                   <button
                     type="submit"
                     disabled={!isContactInfoValid}
-                    className="inline-flex items-center gap-2 rounded-full bg-[#1B4332] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#24533f] disabled:cursor-not-allowed disabled:bg-[#9aa79f]"
+                    className={primaryButtonClass}
                   >
                     Gerar relatório
                   </button>
                   <button
                     type="button"
-                    className="inline-flex items-center gap-2 rounded-full border border-[#d7d1c2] bg-[#fffdf8] px-5 py-3 text-sm font-semibold text-[#163126] transition hover:border-[#CA6702]/30 hover:bg-[#fff7ed]"
+                    className={secondaryButtonClass}
                     onClick={goBackFromContact}
                   >
                     <ArrowLeft className="h-4 w-4" />
@@ -3167,14 +3201,20 @@ export default function OfficeAssessment({
                     <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#CA6702]">
                       {accentText(currentQuestion.eyebrow)}
                     </p>
-                    <h3 className="mt-3 text-2xl font-semibold text-[#1B4332]">
+                    <h3
+                      className={
+                        compact
+                          ? "mt-3 text-3xl font-extrabold uppercase leading-none tracking-[-0.04em] text-[#1B4332]"
+                          : "mt-3 text-2xl font-semibold text-[#1B4332]"
+                      }
+                    >
                       {accentText(currentQuestion.title)}
                     </h3>
                     <p className="mt-3 max-w-2xl text-sm leading-6 text-[#52625a]">
                       {accentText(getQuestionExplanation(currentQuestion.id))}
                     </p>
                   </div>
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#1B4332] text-white">
+                  <span className={iconClass}>
                     <ClipboardList className="h-5 w-5" />
                   </span>
                 </div>
@@ -3184,7 +3224,7 @@ export default function OfficeAssessment({
                     <button
                       key={answer.label}
                       type="button"
-                      className="rounded-[1rem] border border-[#d8e0da] bg-[#fffdfa] px-4 py-4 text-left transition hover:border-[#CA6702]/50 hover:bg-[#fff7ed]"
+                      className={answerButtonClass}
                       onClick={() => selectAnswer(answer)}
                     >
                       <span className="block text-sm font-semibold text-[#1B4332] sm:text-base">
@@ -3215,19 +3255,25 @@ export default function OfficeAssessment({
                     <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#CA6702]">
                       Relatório gerado
                     </p>
-                    <h3 className="mt-3 text-2xl font-semibold text-[#1B4332]">
+                    <h3
+                      className={
+                        compact
+                          ? "mt-3 text-3xl font-extrabold uppercase leading-none tracking-[-0.04em] text-[#1B4332]"
+                          : "mt-3 text-2xl font-semibold text-[#1B4332]"
+                      }
+                    >
                       {accentText(
                         result.officeProfile?.title ??
                           `Como o CargaViva ajuda ${result.participant.label}`,
                       )}
                     </h3>
                   </div>
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#1B4332] text-white">
+                  <span className={iconClass}>
                     <FileText className="h-5 w-5" />
                   </span>
                 </div>
 
-                <div className="mt-5 rounded-[1rem] border border-[#d8e0da] bg-[#f8faf7] p-4 text-sm leading-7 text-[#52625a] sm:text-base">
+                <div className={previewBoxClass}>
                   <p className="font-semibold text-[#1B4332]">
                     {accentText(result.level.label)}
                   </p>
@@ -3237,9 +3283,9 @@ export default function OfficeAssessment({
                   </p>
                 </div>
 
-                <div className="mt-5 rounded-[1.15rem] border border-[#eadbc5] bg-[#fffaf2] p-5">
+                <div className={calloutClass}>
                   <div className="flex items-start gap-3">
-                    <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#CA6702] text-white">
+                    <span className={stepIconClass}>
                       <CheckCircle2 className="h-4 w-4" />
                     </span>
                     <div>
@@ -3257,7 +3303,7 @@ export default function OfficeAssessment({
                 <div className="mt-6 flex flex-wrap gap-3">
                   <button
                     type="button"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#1B4332] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#24533f]"
+                    className={primaryButtonClass}
                     onClick={() =>
                       downloadPdf(reportLines, contactInfo, result.participant.label)
                     }
@@ -3267,7 +3313,7 @@ export default function OfficeAssessment({
                   </button>
                   <button
                     type="button"
-                    className="inline-flex items-center gap-2 rounded-full border border-[#d7d1c2] bg-[#fffdf8] px-5 py-3 text-sm font-semibold text-[#163126] transition hover:border-[#CA6702]/30 hover:bg-[#fff7ed]"
+                    className={secondaryButtonClass}
                     onClick={restart}
                   >
                     <RotateCcw className="h-4 w-4" />

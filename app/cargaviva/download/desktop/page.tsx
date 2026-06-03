@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { Montserrat, Oswald } from "next/font/google";
 
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
@@ -12,6 +14,16 @@ const desktopDownloadName = "CargaViva-Fretes-Desktop-Setup-0.1.0.zip";
 const desktopVersion = "0.1.0";
 const desktopUpdatedAt = "26/05/2026";
 const desktopFileSize = "87,0 MB";
+
+const headingFont = Oswald({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
+
+const bodyFont = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 const buildWhatsAppLink = () => {
   const message =
@@ -77,163 +89,207 @@ const instructions = [
 export default function CargaVivaDesktopDownloadPage() {
   return (
     <>
-      <Navbar variant="light" />
+      <Navbar variant="hero" />
 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <main className="relative min-h-screen overflow-hidden bg-[#061b10] pt-24 text-slate-900">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-no-repeat"
-          style={{
-            backgroundImage: `url('${pageBackground}')`,
-            backgroundAttachment: "fixed",
-            backgroundPosition: "center center",
-            backgroundSize: "cover",
-          }}
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(180deg, rgba(2,10,6,0.18) 0%, rgba(2,10,6,0.34) 100%)",
-          }}
-        />
+      <main
+        className={`${bodyFont.className} min-h-screen overflow-hidden bg-[#061b10] text-[#062018]`}
+      >
+        <section className="relative flex min-h-[64vh] items-end overflow-hidden px-6 pb-20 pt-28 text-white">
+          <Image
+            src={pageBackground}
+            alt=""
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,10,6,0.94)_0%,rgba(2,10,6,0.68)_48%,rgba(2,10,6,0.24)_100%),linear-gradient(180deg,rgba(2,10,6,0.2)_0%,rgba(2,10,6,0.75)_100%)]" />
 
-        <section className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-12 sm:px-6 sm:pb-16">
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/90 shadow-[0_28px_80px_rgba(2,10,6,0.26)] backdrop-blur">
-            <div className="border-b border-[#e7e2d7] px-5 py-8 sm:px-8 sm:py-10">
-              <span className="inline-flex items-center rounded-full border border-[#1B4332]/12 bg-[#1B4332]/8 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-[#1B4332]">
-                CargaViva Fretes
-              </span>
+          <div className="relative z-10 mx-auto w-full max-w-7xl">
+            <Image
+              src="/images/cargaviva/logo-horizontal-light.png"
+              alt="CargaViva Fretes"
+              width={260}
+              height={92}
+              className="mb-8 h-auto w-52 object-contain"
+              priority
+            />
+            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#ca6702]">
+              Download oficial
+            </p>
+            <h1
+              className={`${headingFont.className} mt-4 max-w-5xl text-[clamp(3.2rem,7.6vw,7.6rem)] font-bold uppercase leading-[0.86] tracking-[-0.055em]`}
+            >
+              CargaViva Desktop
+            </h1>
+            <p className="mt-7 max-w-2xl text-base font-medium leading-8 text-white/78 sm:text-lg">
+              Aplicativo oficial para Windows da plataforma CargaViva Fretes.
+            </p>
+          </div>
+        </section>
 
-              <h1 className="mt-5 text-4xl font-semibold tracking-[-0.045em] text-[#163126] sm:text-5xl">
-                Download Desktop para Windows
-              </h1>
-
-              <p className="mt-5 max-w-3xl text-base leading-8 text-[#4f5f57] sm:text-lg">
-                Página oficial de download da versão desktop do CargaViva
-                Fretes para Windows.
+        <section className="bg-[#f5efe2] px-6 py-20">
+          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.36fr_0.64fr] lg:items-start">
+            <div>
+              <h2
+                className={`${headingFont.className} text-5xl font-bold uppercase leading-none tracking-[-0.04em] text-[#0d3b2a]`}
+              >
+                Baixe para Windows com segurança.
+              </h2>
+              <p className="mt-6 text-sm font-medium leading-7 text-[#49645a]">
+                Esta é a página oficial de distribuição da versão desktop do
+                CargaViva Fretes. Baixe apenas por aqui para evitar arquivos
+                alterados ou fontes desconhecidas.
               </p>
-
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/cargaviva"
-                  className="inline-flex items-center justify-center rounded-full border border-[#d7d1c2] bg-[#fffdf8] px-5 py-3 text-sm font-semibold text-[#163126] transition hover:border-[#CA6702]/30 hover:bg-[#fff7ed]"
+                  className="inline-flex bg-[#1b4332] px-6 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white transition hover:-translate-y-1 hover:bg-[#ca6702]"
                 >
-                  Voltar para CargaViva
+                  Voltar ao CargaViva
                 </Link>
-
                 <a
                   href="https://play.google.com/store/apps/details?id=br.com.akelm.cargavivafretes"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-[#1B4332] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#24533f]"
+                  className="inline-flex border border-[#1b4332]/18 bg-white px-6 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-[#1b4332] transition hover:-translate-y-1 hover:border-[#ca6702] hover:text-[#ca6702]"
                 >
-                  Ver versão para celular
+                  Versão para celular
                 </a>
               </div>
             </div>
 
-            <div className="px-5 py-6 sm:px-8 sm:py-8">
-              <div className="grid gap-5 lg:grid-cols-[1.08fr_0.92fr]">
-                <article className="rounded-[1.5rem] border border-[#e6e0d4] bg-[#fffdfa] p-5 shadow-[0_14px_40px_rgba(27,67,50,0.04)] sm:p-6">
-                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-[#9f5304]">
-                    Aplicativo oficial
-                  </p>
-                  <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[#163126]">
-                    CargaViva Fretes Desktop
-                  </h2>
-                  <p className="mt-4 text-sm leading-7 text-[#5f6d66] sm:text-base">
-                    Aplicativo oficial para Windows da plataforma CargaViva
-                    Fretes.
-                  </p>
-
-                  <a
-                    href={desktopDownloadHref}
-                    download={desktopDownloadName}
-                    className="mt-6 block w-full rounded-[1.4rem] bg-gradient-to-r from-[#1B4332] to-[#2d6a4f] px-6 py-6 text-white shadow-[0_22px_45px_rgba(27,67,50,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_28px_55px_rgba(27,67,50,0.36)]"
+            <a
+              href={desktopDownloadHref}
+              download={desktopDownloadName}
+              className="group block bg-[#1b4332] p-7 text-white shadow-[0_28px_90px_rgba(8,40,28,0.18)] transition hover:-translate-y-1 hover:bg-[#17402f]"
+            >
+              <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <span className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#ca6702]">
+                    Arquivo ZIP
+                  </span>
+                  <span
+                    className={`${headingFont.className} mt-4 block text-5xl font-bold uppercase leading-none tracking-[-0.04em]`}
                   >
-                    <span className="block text-center text-xl font-semibold sm:text-2xl">
-                      Baixar para Windows
-                    </span>
-                    <span className="mt-4 grid grid-cols-1 gap-2 text-center text-[0.72rem] leading-5 text-white/68 sm:grid-cols-2 sm:text-xs">
-                      {downloadSpecs.map((item) => (
-                        <span
-                          key={item}
-                          className="rounded-[0.8rem] border border-white/10 bg-black/10 px-3 py-2"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </span>
-                  </a>
-                </article>
-
-                <div className="grid gap-5">
-                  <article className="rounded-[1.5rem] border border-[#d8e2dc] bg-[#f7fbf8] p-5 shadow-[0_14px_40px_rgba(27,67,50,0.04)] sm:p-6">
-                    <p className="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-[#1B4332]">
-                      Instruções
-                    </p>
-                    <ol className="mt-4 grid gap-3">
-                      {instructions.map((item, index) => (
-                        <li
-                          key={item}
-                          className="rounded-[1rem] border border-[#d8e2dc] bg-white px-4 py-3 text-sm leading-7 text-[#42544b] sm:text-base"
-                        >
-                          <span className="font-semibold text-[#163126]">
-                            {index + 1}.
-                          </span>{" "}
-                          {item}
-                        </li>
-                      ))}
-                    </ol>
-                  </article>
-
-                  <article className="rounded-[1.5rem] border border-[#f1d7b3] bg-[#fff8ee] p-5 shadow-[0_14px_40px_rgba(202,103,2,0.08)] sm:p-6">
-                    <p className="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-[#9f5304]">
-                      Aviso útil
-                    </p>
-                    <p className="mt-4 text-sm leading-7 text-[#6f5a43] sm:text-base">
-                      Este instalador é distribuído oficialmente pela
-                      Akelm/CargaViva. Como a versão desktop ainda é nova,
-                      alguns navegadores podem exibir aviso de arquivo pouco
-                      baixado. O Windows também pode exibir aviso na hora de
-                      extrair ou executar o arquivo `.exe`; nesse caso, basta
-                      clicar em manter e prosseguir apenas se o download foi
-                      feito por esta página oficial.
-                    </p>
-                  </article>
-
-                  <article className="rounded-[1.5rem] border border-[#d8e2dc] bg-[#f7fbf8] p-5 shadow-[0_14px_40px_rgba(27,67,50,0.04)] sm:p-6">
-                    <p className="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-[#1B4332]">
-                      Suporte
-                    </p>
-                    <p className="mt-4 text-sm leading-7 text-[#42544b] sm:text-base">
-                      Em caso de dúvida, chame nosso suporte.
-                    </p>
-                    <div className="mt-4 flex flex-wrap gap-3">
-                      <a
-                        href={buildWhatsAppLink()}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center justify-center rounded-full bg-[#1B4332] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#24533f]"
-                      >
-                        Falar no WhatsApp
-                      </a>
-                      <a
-                        href="mailto:arthur@akelm.com.br"
-                        className="inline-flex items-center justify-center rounded-full border border-[#d7d1c2] bg-white px-5 py-3 text-sm font-semibold text-[#163126] transition hover:border-[#CA6702]/30 hover:bg-[#fff7ed]"
-                      >
-                        Enviar e-mail
-                      </a>
-                    </div>
-                  </article>
+                    Baixar para Windows
+                  </span>
                 </div>
+                <Image
+                  src="/images/cargaviva/desktop-icon.png"
+                  alt=""
+                  width={88}
+                  height={88}
+                  className="h-20 w-20 object-contain transition group-hover:scale-105"
+                />
+              </div>
+
+              <div className="mt-8 grid gap-2 text-[0.68rem] font-bold uppercase leading-5 tracking-[0.08em] text-white/70 sm:grid-cols-2">
+                {downloadSpecs.map((item) => (
+                  <span key={item} className="bg-white/8 px-4 py-3">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section className="bg-white px-6 py-24">
+          <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.36fr_0.64fr]">
+            <div>
+              <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#ca6702]">
+                Instalação
+              </p>
+              <h2
+                className={`${headingFont.className} mt-4 text-5xl font-bold uppercase leading-none tracking-[-0.04em] text-[#0d3b2a]`}
+              >
+                Como instalar
+              </h2>
+            </div>
+
+            <ol className="grid gap-1 md:grid-cols-2">
+              {instructions.map((item, index) => (
+                <li
+                  key={item}
+                  className={[
+                    "min-h-[180px] p-7",
+                    index % 2 === 0
+                      ? "bg-[#1b4332] text-white"
+                      : "bg-[#f5efe2] text-[#0d3b2a]",
+                  ].join(" ")}
+                >
+                  <span
+                    className={`${headingFont.className} text-5xl font-bold text-[#ca6702]`}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <p className="mt-8 text-sm font-bold leading-7">{item}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="bg-[#ca6702] px-6 py-20 text-[#08281c]">
+          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.36fr_0.64fr]">
+            <h2
+              className={`${headingFont.className} text-5xl font-bold uppercase leading-none tracking-[-0.04em]`}
+            >
+              Aviso útil antes de baixar
+            </h2>
+            <div className="grid gap-6 text-sm font-semibold leading-7">
+              <p>
+                Este instalador é distribuído oficialmente pela Akelm/CargaViva.
+                Como a versão desktop ainda é nova, alguns navegadores podem
+                exibir aviso de arquivo pouco baixado.
+              </p>
+              <p>
+                O Windows também pode exibir aviso na hora de extrair ou
+                executar o arquivo `.exe`. Nesse caso, clique em manter e
+                prossiga apenas se o download foi feito por esta página oficial.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#f5efe2] px-6 py-20">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.36fr_0.64fr] lg:items-center">
+            <div>
+              <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#ca6702]">
+                Suporte
+              </p>
+              <h2
+                className={`${headingFont.className} mt-4 text-5xl font-bold uppercase leading-none tracking-[-0.04em] text-[#0d3b2a]`}
+              >
+                Ficou com dúvida?
+              </h2>
+            </div>
+            <div>
+              <p className="max-w-2xl text-sm font-medium leading-7 text-[#49645a]">
+                Em caso de dúvida, chame nosso suporte. A equipe da Akelm pode
+                ajudar com o download, instalação e primeiros passos.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href={buildWhatsAppLink()}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex bg-[#1b4332] px-6 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white transition hover:-translate-y-1 hover:bg-[#ca6702]"
+                >
+                  Falar no WhatsApp
+                </a>
+                <a
+                  href="mailto:arthur@akelm.com.br"
+                  className="inline-flex border border-[#1b4332]/18 bg-white px-6 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-[#1b4332] transition hover:-translate-y-1 hover:border-[#ca6702] hover:text-[#ca6702]"
+                >
+                  Enviar e-mail
+                </a>
               </div>
             </div>
           </div>

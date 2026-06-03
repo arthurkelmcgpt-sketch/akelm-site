@@ -1,11 +1,23 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { Montserrat, Oswald } from "next/font/google";
 
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.akelm.com.br";
 const pageBackground = "/images/cargaviva/bkgd-cargaviva.png";
+
+const headingFont = Oswald({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
+
+const bodyFont = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 type TermsSection = {
   paragraphs?: string[];
@@ -154,8 +166,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Termos de Uso | CargaViva Fretes",
-    description:
-      "Página oficial com os Termos de Uso do CargaViva Fretes.",
+    description: "Página oficial com os Termos de Uso do CargaViva Fretes.",
     images: [
       {
         alt: "Identidade visual do CargaViva Fretes",
@@ -178,116 +189,174 @@ export const metadata: Metadata = {
 export default function CargaVivaTermsPage() {
   return (
     <>
-      <Navbar variant="light" />
+      <Navbar variant="hero" />
 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <main className="relative min-h-screen overflow-hidden bg-[#061b10] pt-24 text-slate-900">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-no-repeat"
-          style={{
-            backgroundImage: `url('${pageBackground}')`,
-            backgroundAttachment: "fixed",
-            backgroundPosition: "center center",
-            backgroundSize: "cover",
-          }}
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(180deg, rgba(2,10,6,0.18) 0%, rgba(2,10,6,0.34) 100%)",
-          }}
-        />
+      <main
+        className={`${bodyFont.className} min-h-screen overflow-hidden bg-[#061b10] text-[#062018]`}
+      >
+        <section className="relative flex min-h-[62vh] items-end overflow-hidden px-6 pb-20 pt-28 text-white">
+          <Image
+            src={pageBackground}
+            alt=""
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,10,6,0.94)_0%,rgba(2,10,6,0.66)_48%,rgba(2,10,6,0.24)_100%),linear-gradient(180deg,rgba(2,10,6,0.2)_0%,rgba(2,10,6,0.75)_100%)]" />
 
-        <section className="relative z-10 mx-auto w-full max-w-5xl px-4 pb-12 sm:px-6 sm:pb-16">
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/90 shadow-[0_28px_80px_rgba(2,10,6,0.26)] backdrop-blur">
-            <div className="border-b border-[#e7e2d7] px-5 py-8 sm:px-8 sm:py-10">
-              <span className="inline-flex items-center rounded-full border border-[#1B4332]/12 bg-[#1B4332]/8 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-[#1B4332]">
-                CargaViva Fretes
-              </span>
+          <div className="relative z-10 mx-auto w-full max-w-7xl">
+            <Image
+              src="/images/cargaviva/logo-horizontal-light.png"
+              alt="CargaViva Fretes"
+              width={260}
+              height={92}
+              className="mb-8 h-auto w-52 object-contain"
+              priority
+            />
+            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#ca6702]">
+              Documento oficial
+            </p>
+            <h1
+              className={`${headingFont.className} mt-4 max-w-4xl text-[clamp(3.4rem,8vw,8rem)] font-bold uppercase leading-[0.86] tracking-[-0.055em]`}
+            >
+              Termos de Uso
+            </h1>
+            <p className="mt-7 max-w-2xl text-base font-medium leading-8 text-white/78 sm:text-lg">
+              Regras de uso do CargaViva Fretes, aplicativo desenvolvido e
+              mantido pela Akelm Tecnologia.
+            </p>
+            <p className="mt-4 text-sm font-extrabold uppercase tracking-[0.2em] text-white/70">
+              Última atualização: 19 de abril de 2026
+            </p>
+          </div>
+        </section>
 
-              <h1 className="mt-5 text-4xl font-semibold tracking-[-0.045em] text-[#163126] sm:text-5xl">
-                Termos de Uso
-              </h1>
-
-              <p className="mt-4 text-sm font-medium uppercase tracking-[0.22em] text-[#9f5304]">
-                Última atualização: 19 de abril de 2026
+        <section className="bg-[#f5efe2] px-6 py-20">
+          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.36fr_0.64fr]">
+            <div>
+              <h2
+                className={`${headingFont.className} text-5xl font-bold uppercase leading-none tracking-[-0.04em] text-[#0d3b2a]`}
+              >
+                Antes de usar, leia com atenção.
+              </h2>
+              <p className="mt-6 text-sm font-medium leading-7 text-[#49645a]">
+                Estes termos explicam o papel da plataforma, as
+                responsabilidades de clientes e motoristas, regras de pagamento,
+                localização, uso correto e suporte.
               </p>
-
-              <p className="mt-5 max-w-3xl text-base leading-8 text-[#4f5f57] sm:text-lg">
-                Esta página reúne os termos aplicáveis ao uso do CargaViva
-                Fretes, aplicativo desenvolvido e mantido pela Akelm Tecnologia.
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/cargaviva"
-                  className="inline-flex items-center justify-center rounded-full border border-[#d7d1c2] bg-[#fffdf8] px-5 py-3 text-sm font-semibold text-[#163126] transition hover:border-[#CA6702]/30 hover:bg-[#fff7ed]"
+                  className="inline-flex bg-[#1b4332] px-6 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white transition hover:-translate-y-1 hover:bg-[#ca6702]"
                 >
-                  Voltar para CargaViva
+                  Voltar ao CargaViva
                 </Link>
-
                 <Link
                   href="/cargaviva/politicadeprivacidade"
-                  className="inline-flex items-center justify-center rounded-full border border-[#d7d1c2] bg-[#fffdf8] px-5 py-3 text-sm font-semibold text-[#163126] transition hover:border-[#CA6702]/30 hover:bg-[#fff7ed]"
+                  className="inline-flex border border-[#1b4332]/18 bg-white px-6 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-[#1b4332] transition hover:-translate-y-1 hover:border-[#ca6702] hover:text-[#ca6702]"
                 >
-                  Ver política de privacidade
+                  Política de privacidade
                 </Link>
-
-                <a
-                  href="https://wa.me/5555999171727"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-[#1B4332] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#24533f]"
-                >
-                  Falar no WhatsApp
-                </a>
               </div>
             </div>
 
-            <div className="px-5 py-6 sm:px-8 sm:py-8">
-              <div className="grid gap-5">
-                {termsSections.map((section, index) => (
-                  <article
-                    key={section.title}
-                    className="rounded-[1.5rem] border border-[#e6e0d4] bg-[#fffdfa] p-5 shadow-[0_14px_40px_rgba(27,67,50,0.04)] sm:p-6"
-                  >
-                    <h2 className="text-xl font-semibold tracking-tight text-[#163126] sm:text-2xl">
-                      {section.title}
-                    </h2>
-
-                    <div className="mt-4 grid gap-4">
-                      {section.paragraphs?.map((paragraph) => (
-                        <p
-                          key={paragraph}
-                          className="text-sm leading-7 text-[#5f6d66] sm:text-base"
-                        >
-                          {paragraph}
-                        </p>
-                      ))}
-
-                      {section.points?.length ? (
-                        <ul className="grid gap-3">
-                          {section.points.map((point) => (
-                            <li
-                              key={point}
-                              className="rounded-2xl border border-[#dcd6ca] bg-white px-4 py-3 text-sm leading-7 text-[#5f6d66] sm:text-base"
-                            >
-                              {point}
-                            </li>
-                          ))}
-                        </ul>
-                      ) : null}
-                    </div>
-                  </article>
-                ))}
+            <div className="grid gap-4 text-sm font-medium leading-7 text-[#23463a] md:grid-cols-2">
+              <div className="bg-white p-7 shadow-[0_22px_70px_rgba(13,59,42,0.08)]">
+                <span className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#ca6702]">
+                  Plataforma
+                </span>
+                <p className="mt-4">
+                  O CargaViva aproxima solicitantes e motoristas, mas não atua
+                  como transportadora e não executa fretes diretamente.
+                </p>
               </div>
+              <div className="bg-[#1b4332] p-7 text-white shadow-[0_22px_70px_rgba(13,59,42,0.16)]">
+                <span className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#ca6702]">
+                  Suporte
+                </span>
+                <p className="mt-4">
+                  Em caso de dúvidas, fale com a equipe pelo WhatsApp (55)
+                  99917-1727.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white px-6 py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-1">
+              {termsSections.map((section, index) => (
+                <article
+                  key={section.title}
+                  className={[
+                    "grid gap-8 p-7 md:grid-cols-[0.28fr_0.72fr] md:p-10",
+                    index % 2 === 0
+                      ? "bg-white"
+                      : "bg-[#f5efe2]",
+                  ].join(" ")}
+                >
+                  <div>
+                    <span
+                      className={`${headingFont.className} text-5xl font-bold text-[#ca6702]`}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h2
+                      className={`${headingFont.className} mt-5 text-3xl font-bold uppercase leading-none tracking-[-0.04em] text-[#0d3b2a]`}
+                    >
+                      {section.title.replace(/^\d+\.\s*/, "")}
+                    </h2>
+                  </div>
+
+                  <div className="grid gap-4">
+                    {section.paragraphs?.map((paragraph) => (
+                      <p
+                        key={paragraph}
+                        className="text-sm font-medium leading-7 text-[#23463a]"
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+
+                    {section.points?.length ? (
+                      <ul className="mt-2 grid gap-3">
+                        {section.points.map((point) => (
+                          <li
+                            key={point}
+                            className="border-l-4 border-[#ca6702] bg-white px-5 py-4 text-sm font-medium leading-7 text-[#23463a] shadow-[0_14px_40px_rgba(13,59,42,0.05)]"
+                          >
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-12 flex flex-wrap gap-3">
+              <Link
+                href="/cargaviva"
+                className="inline-flex bg-[#1b4332] px-6 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white transition hover:-translate-y-1 hover:bg-[#ca6702]"
+              >
+                Voltar ao CargaViva
+              </Link>
+              <a
+                href="https://wa.me/5555999171727"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex border border-[#1b4332]/18 bg-white px-6 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-[#1b4332] transition hover:-translate-y-1 hover:border-[#ca6702] hover:text-[#ca6702]"
+              >
+                Falar no WhatsApp
+              </a>
             </div>
           </div>
         </section>
