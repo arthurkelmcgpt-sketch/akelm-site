@@ -6,7 +6,6 @@ import {
   ClipboardCheck,
   FileSearch,
   MapPinned,
-  MonitorCheck,
   Route,
   ShieldCheck,
   Tags,
@@ -19,7 +18,8 @@ import OfficeAssessment from "./OfficeAssessment";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.akelm.com.br";
 const pageBackground = "/images/cargaviva/bkgd-cargaviva.png";
-const youtubeEmbedUrl = "";
+const presentationVideo =
+  "/video/cargaviva-escritorio-apresentacao.mp4";
 
 const headingFont = Oswald({
   subsets: ["latin"],
@@ -34,31 +34,31 @@ const bodyFont = Montserrat({
 const officeBenefits = [
   {
     icon: ClipboardCheck,
-    title: "Pedidos organizados",
-    text: "O escritório deixa de depender de mensagens soltas e passa a acompanhar cada solicitação com origem, destino, carga, motorista e status.",
+    title: "Solicite fretes",
+    text: "Preencha as informações da solicitação e o aplicativo entregará a lista de caminhoneiros aptos a atender o frete. Após selecionar o motorista, o mesmo irá enviar uma proposta de valor que poderá ser aceita ou renegociada. Após o aceite da proposta o solicitante deverá efetuar o pagamento para confirmar o frete. O valor pago ficará retido em segurança até que o frete seja concluído, sendo repassado ao motorista após a finalização do serviço.  ",
   },
   {
     icon: UsersRound,
-    title: "Clientes e motoristas no mesmo fluxo",
-    text: "A equipe consegue orientar clientes e motoristas sem perder histórico de propostas, confirmações, ajustes e conversas importantes.",
+    title: "Escritório, clientes e motoristas em sintonia",
+    text: "Com o CargaViva não há informações e tratativas espalhadas em conversas de whatsapp, anotações, planilhas ou até mesmo dependendo da memória de alguém. Toda a informação sobre os fretes estarão no sistema para que sejam consultadas por quem precisa, no momento que for preciso. Além disso, a comunicação entre ambas as partes são feitas dentro do aplicativo pelo chat interno vinculado a cada solicitação.",
   },
   {
     icon: MapPinned,
-    title: "Mais visibilidade durante o transporte",
-    text: "O rastreamento ajuda o escritório a responder dúvidas com mais segurança e acompanhar entregas em andamento.",
+    title: "Rastreamento e segurança",
+    text: "O motorista só pode iniciar o transporte estando com a localização ativada, e caso desabilite em qualquer momento durante o transporte, o aplicativo bloqueia qualquer ação até que seja reabilitada. Também é enviado um aviso ao solicitante contendo a informação, a ultima coordenada registrada e horário. Sendo assim, o rastreio fica disponível durante toda a jornada, mesmo quando o motorista estiver passando por uma região sem cobertura de internet através do rastreio offline. Além disso, o motorista só consegue finalizar o transporte estando dentro de um raio de 500 metros do local de destino marcado na solicitação. Ou seja, quando o cliente questionar onde está sua carga, você não terá trabalho nem dificuldade para informar.",
   },
   {
     icon: FileSearch,
     title: "Histórico para conferência",
-    text: "Registros de status, avaliação, pagamento, conclusão e documentação facilitam auditoria, suporte e conferência posterior.",
+    text: "Se sua equipe precisar consultar informações sobre fretes passados, seja por qual motivo for, com o CargaViva você estará amparado. A solicitação é salva com os dados de origem, destino e carga; Informações do caminhoneiro e solicitante envolvidos; Tratativas de valor e pagamento; Conversas trocadas no chat interno; Linha do tempo com data e horário em que cada etapa do processo foi realizada. ",
   },
 ] as const;
 
 const officeHighlights = [
-  "Centralizar pedidos que hoje ficam espalhados no WhatsApp.",
-  "Acompanhar status, motorista, documentação e pagamento em um só fluxo.",
-  "Gerar mais confiança para cliente final, escritório e caminhoneiro.",
-  "Usar versão desktop para organizar solicitações com tags, busca e painel.",
+  "Centralize pedidos que hoje ficam espalhados no WhatsApp.",
+  "Acompanhe status, motorista, documentação e pagamento em um só fluxo.",
+  "Tenha um histórico completo de cada frete para consultar quando precisar.",
+  "Gere mais confiança para seus clientes com rastreamento em tempo real da carga.",
 ] as const;
 
 const structuredData = {
@@ -146,12 +146,12 @@ export default function CargaVivaOfficePage() {
               <h1
                 className={`${headingFont.className} mt-5 max-w-5xl text-[clamp(3rem,7.1vw,7.2rem)] font-bold uppercase leading-[0.95] tracking-[-0.05em] text-white`}
               >
-                Sua operação de fretes em um fluxo mais claro.
+                Sistema de gestão para centralizar todas as informações de fretes.
               </h1>
               <p className="mt-7 max-w-2xl text-base font-medium leading-8 text-white/78 sm:text-lg">
                 O CargaViva Fretes ajuda escritórios, assessorias e equipes
                 administrativas a organizar solicitações, motoristas, status,
-                pagamentos, documentação e rastreamento em uma jornada única.
+                pagamentos, documentação e rastreamento em um único lugar.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
@@ -191,15 +191,15 @@ export default function CargaVivaOfficePage() {
         </section>
 
         <section id="video" className="bg-[#f5efe2] px-6 py-24 sm:px-8 lg:px-10">
-          <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.36fr_0.64fr] lg:items-center">
-            <div>
+          <div className="mx-auto grid w-full max-w-[1700px] gap-10 lg:grid-cols-[minmax(340px,480px)_minmax(0,1fr)] lg:items-center">
+            <div className="max-w-[480px]">
               <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#ca6702]">
-                Visão geral
+                Com o cargaviva...
               </p>
               <h2
                 className={`${headingFont.className} mt-4 text-5xl font-bold uppercase leading-none tracking-[-0.04em] text-[#0d3b2a] sm:text-6xl`}
               >
-                O escritório sai do improviso e ganha acompanhamento.
+                O escritório sai do improviso e ganha previsibilidade.
               </h2>
               <p className="mt-6 text-sm font-medium leading-7 text-[#49645a]">
                 Em vez de controlar fretes por conversas, ligações e anotações,
@@ -209,27 +209,17 @@ export default function CargaVivaOfficePage() {
               </p>
             </div>
 
-            <div className="border border-[#d8e0da] bg-white p-5 shadow-[0_28px_80px_rgba(27,67,50,0.08)]">
-              {youtubeEmbedUrl ? (
-                <iframe
-                  className="aspect-video w-full"
-                  src={youtubeEmbedUrl}
-                  title="CargaViva para escritórios"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              ) : (
-                <div className="flex aspect-video w-full flex-col items-center justify-center border border-dashed border-[#9caf9f] bg-[#f8faf7] px-6 text-center">
-                  <MonitorCheck className="h-12 w-12 text-[#1B4332]" />
-                  <p className="mt-5 text-xs font-extrabold uppercase tracking-[0.28em] text-[#CA6702]">
-                    Vídeo em breve
-                  </p>
-                  <p className="mt-4 max-w-md text-sm font-medium leading-7 text-[#52625a]">
-                    O espaço já está preparado para receber o link do YouTube e
-                    reproduzir o vídeo diretamente nesta página.
-                  </p>
-                </div>
-              )}
+            <div className="w-full justify-self-end overflow-hidden border border-[#d8e0da] bg-[#07391f] p-1 shadow-[0_28px_80px_rgba(27,67,50,0.12)]">
+              <video
+                className="aspect-video w-full object-cover"
+                src={presentationVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Apresentação do CargaViva para escritórios"
+              />
             </div>
           </div>
         </section>
@@ -243,7 +233,7 @@ export default function CargaVivaOfficePage() {
               <h2
                 className={`${headingFont.className} mt-4 text-5xl font-bold uppercase leading-none tracking-[-0.04em] sm:text-6xl`}
               >
-                Onde o CargaViva entra no dia a dia.
+                Onde o CargaViva entra no dia a dia?
               </h2>
             </div>
 
@@ -276,7 +266,7 @@ export default function CargaVivaOfficePage() {
                 <h3
                   className={`${headingFont.className} mt-8 text-4xl font-bold uppercase leading-none tracking-[-0.04em]`}
                 >
-                  Versão desktop como apoio operacional
+                  A ideia é trazer organização e controle para uma demanda que ainda carece de registros formais.
                 </h3>
               </div>
               <div className="border border-white/10 bg-[#03170d]/42 p-7 shadow-[0_22px_55px_rgba(0,0,0,0.14)]">
@@ -327,7 +317,7 @@ export default function CargaVivaOfficePage() {
           <div className="mx-auto flex max-w-7xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#ca6702]">
-                Próximo passo
+                Escritório, vamos conversar?
               </p>
               <h2
                 className={`${headingFont.className} mt-3 text-5xl font-bold uppercase leading-none tracking-[-0.04em] text-[#0d3b2a]`}
